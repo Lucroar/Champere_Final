@@ -259,7 +259,7 @@ body {
 
 /* Drop Down CSS Employee Login */
 .dropbtn {
-    background-color: #3498DB;
+    background-color: #894e32;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -268,7 +268,7 @@ body {
   }
   
   .dropbtn:hover, .dropbtn:focus {
-    background-color: #2980B9;
+    background-color: #894e32;
   }
   
   .dropdown {
