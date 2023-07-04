@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Customer Login</title>
+        <link rel="stylesheet" href="cha_sys_view_formstylesheet.css">
+    </head>
+<body>
+    <center>
+    <div class="background">
+        <div class="form-container">
+
+        <div class="form-header">
+            <a href="cha_sys_new_index.html"><img src="./img/Champeré logo.png" alt="Champeré logo" height="150px"></a>
+            <h1> Employee Login </h1>
+
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Select Your Department</button>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="#">Payroll</a>
+                  <a href="#">Human Resource</a>
+                  <a href="#">Supply Chain Management</a>
+                  <a href="#">Accountancy</a>
+                  <a href="#">Marketing</a>
+                </div>
+              </div>
+
+        </div>
+        <div class="form-label">
+            <form class="form-label" action="cha_sys_new_index.html" method="get">
+            <label for="name">Username<br></label>
+            <input class="form-input" type="text" placeholder="Enter Name" name="name" required>
+            <label for="password">Password<br></label>
+            <input class="form-input" type="password" placeholder="Enter Password" name="password" required>
+            <button class="form-button" type="submit">Login</button>
+            </form>
+        </div>
+        </div>
+    </div>
+    </center>
+    <script src="/cha_sys_new_javaScript.js"></script>
+</body>
+</html>
