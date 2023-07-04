@@ -295,3 +295,37 @@ body {
   .dropdown-content a:hover {background-color: #ddd;}
   
   .show {display:block;}
+
+/*Cutomer login hr*/
+.divider {
+    display: flex;
+
+    &:before,
+    &:after {
+        content: "";
+        flex: 1;
+    }
+}
+  
+.line {
+align-items: center;
+margin: 1em -1em;
+
+&:before,
+&:after {
+    height: 1px;
+    margin: 0 1em;
+}
+}
+  
+.razor {
+    &:before,
+    &:after {
+    box-shadow: 0 0.5px 0 gray; 
+    }
+}
+
+.form-footer{
+    margin-top: 20px;
+    font-size: 14px;
+}
