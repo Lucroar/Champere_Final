@@ -31,7 +31,7 @@ if (empty($name)) {
 }
 
 // Prepare the INSERT statement
-$sql = "INSERT INTO customerInfo (firstName, middleName, lastName, customerEmail, contactInfo, gender, birthdate, address, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO customerinfo (firstName, middleName, lastName, customerEmail, contactInfo, gender, birthdate, address, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 $stmt = $conn->prepare($sql);
 
