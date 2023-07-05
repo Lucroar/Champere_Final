@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Champeré signup</title>
+    <style>
+        body {
+            background-color: white;
+
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            margin-top: 60px;
+            padding: 20px;
+            background-color: #3e000f;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 19px;
+            color: #fff;
+        }
+
+        .form-input {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action=" " method="post">
+            <label class="form-label" for="firstName">First Name</label>
+            <input class="form-input" type="text" id="firstName" name="acc_fname"></input> 
+
+            <label class="form-label" for="middleName">Middle Name</label>
+            <input class="form-input" type="text" id="middleName" name="acc_mname"></input>
+
+            <label class="form-label" for="LastName">Last Name</label>
+            <input class="form-input" type="text" id="lastName" name="acc_lname"></input>
+
+            <label class="form-label" for="customerEmail">Email:</label>
+            <input class="form-input" type="email" id="acc_email" name="customerEmail"></input>
+
+            <label class="form-label" for="ContactInfo">Mobile Number:</label>
+            <input class="form-input" type="text" id="acc_contactinfo" name="ContactInfo"></input>
+
+            <label class="form-label" for="gender">Gender</label>
+            <input type="radio" id="male" name="gender" value="Male">
+            <label class="form-label" style="display: inline-block;">Male</label>
+            <input type="radio" id="female" name="gender" value="Female">
+            <label class="form-label" style="display: inline-block;">Female</label>
+            <input type="radio" id="other" name="gender" value="Other">
+            <label class="form-label" style="display: inline-block;">Other</label>
+            
+            <label class="form-label" for="birthdate">Birthdate:</label>
+            <input class="form-input" type="date" id="birthdate" name="birthdate"></input>
+
+            <label class="form-label" for="address">Address:</label>
+            <input class="form-input" type="textbox" id="address" name="address"></input>
+        </form>
+    </div>
+</body>
+</html>
