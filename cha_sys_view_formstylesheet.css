@@ -277,3 +277,11 @@ margin: 1em -1em;
     margin-top: 20px;
     font-size: 14px;
 }
+
+/* Dropdown Employee Login */
+.dropdown-select {
+    position: relative;
+    font-family: sans-serif;
+    width: 225px;
+    height: 35px;   
+}
