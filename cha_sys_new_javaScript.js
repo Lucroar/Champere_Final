@@ -2,7 +2,7 @@
 function myFunction() {
   
 
-  var link = document.getElementById("framework").value;
+  var link = document.getElementById("framework").innerHTML;
   
   switch (link) {
     case "1":
