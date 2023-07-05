@@ -1,12 +1,11 @@
-
 function myFunction() {
   
 
   var link = document.getElementById("framework").innerHTML;
   
   switch (link) {
-    case "1":
-      document.getElementById("action_page").action = "cha_sys_new_index.html";
+    case 1:
+      document.getElementById("action_page").action = "/cha_sys_new_index.html";
     case "2":
       document.getElementById("myForm").action = "/action_page.php";
     case "3":
