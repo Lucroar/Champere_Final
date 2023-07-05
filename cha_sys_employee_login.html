@@ -16,15 +16,14 @@
                     <h1> Employee Login </h1>
                 </div>
                 <div class="dropdown">
-                    <button onclick="myFunction()" class="dropbtn">Select Your Department</button>
-                    <div id="myDropdown" class="dropdown-content">
-                      <a href="#">Payroll</a>
-                      <a href="#">Human Resource</a>
-                      <a href="#">Supply Chain Management</a>
-                      <a href="#">Accountancy</a>
-                      <a href="#">Marketing</a>
-                      <a href="#">Admin</a>
-                    </div>
+                    <select id="framework">
+                        <option value="1">Payroll</option>
+                        <option value="2">Supply Chain Management</option>
+                        <option value="3">Human Resource</option>
+                        <option value="5">Accountancy</option>
+                        <option value="6">Admin</option>
+                        <option value="7">Marketing</option>
+                    </select>
                   </div>
 
 
@@ -33,7 +32,7 @@
                     <input class="form-input" type="text" placeholder="Enter Name" name="name" required>
                     <label for="password">Password<br></label>
                     <input class="form-input" type="password" placeholder="Enter Password" name="password" required>
-                    <button class="form-button" type="submit">Login</button>
+                    <button class="form-button" type="button">Login</button>
                     </form>
                 </div>
                 </div>
