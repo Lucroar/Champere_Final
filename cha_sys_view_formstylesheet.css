@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 body {
     background-color: #fbefda;
     margin: 0%;
     margin-bottom: 10px;
     background-image: url(./img/champagnemainbg.jpg);
     background-size: cover;
+    font-family: "Noto Sans", 'Times New Roman', sans-serif;
 }
 
 .homepage {
