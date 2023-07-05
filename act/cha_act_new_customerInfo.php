@@ -23,19 +23,12 @@ $birthdate = $_POST['birthdate'];
 $address = $_POST['address'];
 $password = $_POST['password'];
 
-
-// Validate 'SupplierName' input
-if (empty($name)) {
-  echo "Supplier Name cannot be empty.";
-  exit;
-}
-
 // Prepare the INSERT statement
 $sql = "INSERT INTO customerinfo (firstName, middleName, lastName, customerEmail, contactInfo, gender, birthdate, address, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 $stmt = $conn->prepare($sql);
 
-$stmt->bind_param("sssssssss", $firstname, $middleName, $lastName, $customerEmail, $contactInfo, $gender, $birthdate, $address, $$password);
+$stmt->bind_param("sssssssss", $firstname, $middleName, $lastName, $customerEmail, $contactInfo, $gender, $birthdate, $address, $password);
 
 // Execute the statement
 if ($stmt->execute()) {
