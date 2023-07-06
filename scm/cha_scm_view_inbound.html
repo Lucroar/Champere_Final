@@ -1,0 +1,98 @@
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>Inbound Transaction</title>
+    <link rel="icon" type="image/png" href="cham_tablogo.png" alt="Champeré Logo">
+    <link rel="stylesheet" type="text/css" href="cha_scm_stylesheet.css">
+</head>
+<body class="scm">
+    <div class="containerSCM">
+        <h1 class="hscm">Inbound Transaction</h1><hr>
+        <form class="form-containerscm" action="cha_scm_output.php" method="POST">
+            <h3 class="form-headerscm"> Supplier Information: </h3>
+
+                <label class="form-labelscm"> Supplier Name : </label>
+                <input type="text" id="name" name="name" class="form-inputscm" placeholder="Enter Supplier Name.." required><br>
+
+                <label class="form-labelscm">Address:</label>
+                <input type="text" id="address" name="address" class="form-inputscm" placeholder="Enter Address.." required><br>
+
+                <label class="form-labelscm">Contact Information:</label>
+                <input type="number" id="contactinfo" name="contactinfo" class="form-inputscm" placeholder="Enter Contact.." required><br>
+
+                <label class="form-labelscm">Email:</label>
+                <input type="email" id="email" name="email" class="form-inputscm" placeholder="Enter Email.." required><br><hr>
+                
+            <h3 class="form-headerscm">Transaction:</h3>
+                
+                <label class="form-labelscm">Products:</label>
+                <select class="form-inputscm" id="productname" name="productname" onchange="updateDescription()" required>
+                  <option value="" disabled selected>Select a Product...</option>
+                  <option value="Fermented Grape Juice">Fermented Grape Juice</option>
+                  <option value="Sugar">Sugar</option>
+                  <option value="Yeast">Yeast</option>
+                  <option value="Glass Bottle">Glass Bottle</option>
+                </select><br>
+                
+                <label class="labelscm">Description:</label>
+                <textarea class="textareascm" type="text" id="description" name="description" placeholder="Description..." readonly></textarea><br>
+                
+                <label class="form-labelscm">Units:</label>
+                <input type="text" id="units" name="units" class="form-inputscm" placeholder="Enter Units.." required><br>
+
+                <label class="form-labelscm">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" class="form-inputscm" placeholder="Enter Quantity.." required><br>
+
+                <label class="form-labelscm"> Amount : </label>
+                <input type="number" name="amount" class="form-inputscm" id="amount" placeholder="Enter Amount.." required><br>
+
+                <label class="form-labelscm"> Mode of Payment : </label>
+                <select class="form-inputscm" id="paymentM" name="paymentM" required>
+                    <option value="" disabled selected>Select Mode of Payment...</option>
+                    <option value="Cash"> Cash </option>
+                    <option value="Cheque"> Cheque </option>
+                    <option value="E-Wallet"> E-Wallet</option>	
+                </select><br>
+
+                <label class="form-labelscm">Terms of Payment:</label>
+                <select class="form-inputscm" id="termsPay" name="termsPay" required>
+                    <option value="" disabled selected>Select Terms of Payment...</option>
+                    <option value="COD">Cash on Delivery (COD) </option>
+                    <option value="Credit-Card">Credit Card </option>
+                    <option value="Bank-Transfer">Bank Transfer</option>	
+                </select><br>
+
+                <label class="form-labelscm"> Ordered By : </label>
+                <input type="text" name="orderedBy" class="form-inputscm" id="orderedBy" placeholder="Enter Ordered By.." required><br>
+
+                <label class="form-labelscm">Order Date:</label>
+                <input type="date" name="orderdate" id="orderdate" class="form-inputscm" required><br><br>
+
+            <input type="submit" class="form-buttonscm" id="submit" name="submit" value="Submit"><br>
+        </form>
+    </div>
+
+    <script>
+        function updateDescription() {
+            var select = document.getElementById("productname");
+            var description = document.getElementById("description");
+            
+            // Get the selected option value
+            var selectedOption = select.options[select.selectedIndex].value;
+            
+            // Set the description based on the selected value
+            if (selectedOption === "Fermented Grape Juice") {
+                description.value = "is an alcoholic beverage created by fermenting grape juice.";
+            } else if (selectedOption === "Sugar") {
+                description.value = "a natural substance that adds sweetness to food and beverages.";
+            } else if (selectedOption === "Yeast") {
+                description.value = "is a type of fungus used in baking and brewing.";
+            } else if (selectedOption === "Glass Bottle") {
+                description.value = "a bottle made from glass.";
+            } else {
+                description.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
