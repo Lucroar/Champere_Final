@@ -28,7 +28,7 @@ $sql = "INSERT INTO customerinfo (firstName, middleName, lastName, customerEmail
 
 $stmt = $conn->prepare($sql);
 
-$stmt->bind_param("sssssssss", $firstname, $middleName, $lastName, $customerEmail, $contactInfo, $gender, $birthdate, $address, $$password);
+$stmt->bind_param("sssssssss", $firstname, $middleName, $lastName, $customerEmail, $contactInfo, $gender, $birthdate, $address, $password);
 
 // Execute the statement
 if ($stmt->execute()) {
@@ -41,4 +41,6 @@ if ($stmt->execute()) {
 $stmt->close();
 $conn->close();
 
+header("Location: ../cha_sys_customer_index.html", true, 301);
+echo '<script>alert("Welcome to Champeré")</script>';
 ?>

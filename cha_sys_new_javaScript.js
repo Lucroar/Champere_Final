@@ -5,7 +5,7 @@ function myFunction() {
   switch (link) {
     
     case "1":
-      document.getElementById("action_page").action = "cha_sys_admin_index";
+      document.getElementById("action_page").action = "cha_sys_admin_index.html";
       break;
     case "2":
       document.getElementById("action_page").action = "cha_sys_view_faqs.html";
