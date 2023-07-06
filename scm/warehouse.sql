@@ -1,0 +1,8 @@
+CREATE TABLE inventory (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  ProductName VARCHAR(50) NOT NULL,
+  InCount INT NOT NULL,
+  OutCount INT NOT NULL,
+  CurrentStocks INT NOT NULL,
+  Price DECIMAL(10, 2) NOT NULL
+)ENGINE=InnoDB;
