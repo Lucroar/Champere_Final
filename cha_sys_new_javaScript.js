@@ -50,8 +50,8 @@ closeShopping.addEventListener('click', ()=>{
 let products = [
     {
         id: 1,
-        name: 'PRODUCT NAME 1',
-        image: '1.PNG',
+        name: 'Vin de fraise',
+        image: '/img/grape_wine.jpeg',
         price: 120000
     },
     {
