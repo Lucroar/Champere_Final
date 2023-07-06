@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Champeré</title>
+    <link rel="stylesheet" href="../cha_sys_view_formstylesheet.css">
+    <link rel="icon" type="image/x-icon" href="./img/Champeré logo.png">
+    <style>
+
+    body{
+        background-color: white;
+        background-image: none;
+    }
+
+    .navbar-color{
+        background-color: #500113;
+        margin: 0px;
+
+    }
+    .navbar {
+        height: 40px;
+        background-clip: border-box;
+        width: 90%;
+        margin: auto;
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navbar img {
+        height: 50px;
+    }
+
+    .navbar ul li {
+        list-style: none;
+        display: inline-block;
+        margin: 0 20px;
+        position: relative;
+    }
+    
+    .navbar ul li a {
+        text-decoration: none;
+        font-size: 13px;
+        color: #FDCD93;
+        text-transform: uppercase;
+    }
+
+    .title {
+        font-family: "Pinyon Script";
+        text-align: center;
+        font-size: 40px;
+        padding: 0px;
+        color:#FDCD93;
+    }
+
+    #login {
+        display: block;
+        width: 60px;
+        padding: 10px 20px;
+        color: #FDCD93;
+        background-color: #79472E;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+        font-size: 12px;
+    }
+    </style>
+    
+</head>
+<body>
+    <div class="navbar-color">
+    <div class="navbar">
+        <p class="title">Champeré</p>
+        <ul>
+            <li><a href="/cha_sys_admin_profile.html">Admin</a></li>
+            <li><a href="/cha_sys_admin_aboutUs.html">Accountancy</a></li>
+            <li><a href="/cha_sys_admin_faqs.html">Human Resource</a></li>
+            <li><a href="/cha_sys_admin_faqs.html">Marketing</a></li>
+            <li><a href="/cha_sys_admin_faqs.html">Payroll</a></li>
+            <li><a href="/cha_sys_admin_faqs.html">Supply Chain Management</a></li>
+            <li><a id="login" href="/cha_sys_employee_login.html">Log Out</a></li>
+        </ul>
+
+    </div>
+    </div>
+    
+</body>
+</html>
