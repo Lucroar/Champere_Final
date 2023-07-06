@@ -1,0 +1,147 @@
+<!DOCTYPE Html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="cha_hrd_stylesheet.css">
+    <title>Employee Data</title>
+</head>
+<body>
+	<div class="navbar-color">
+		<div class="navbar">
+		  <p class="navbar-title">Champeré</p>
+		  <ul>
+			  <li><a id="login" href="/cha_sys_employee_login.html">Log Out</a></li>
+		  </ul>
+		</div>
+	  </div>
+
+	<div class="container">
+	<h1>Personal Data</h1>
+
+	<form action="cha_hrd_results.php" method="post">
+		<label class="form-label" for ="Firstname"> Full Name:</label>
+		<input class="form-input" type="text" id="Firstname" name="Firstname"  required>
+
+		<label  class="form-label" for ="address"> Address:</label>
+		<textarea class="form-input" name="address" id="address" rows="2" cols="21"></textarea required>
+		
+		<label  class="form-label" for ="Contactno"> Contact:</label >
+		<input class="form-input" type="number" maxlength="11" id="Contactno" name="Contactno" required>	  
+
+		<label  class="form-label" for ="Birthday"> Birthday:</label>
+		<input class="form-input" type="date" id="Birthday" name="Birthday" required >
+
+		<label class="form-label" for ="nameofMother Name"> Mother's Name:</label>
+		<input class="form-input" type="text" id="nameofMother" name="nameofMother"  required>
+
+		<label class="form-label" for ="nameofFather"> Father's Name:</label>
+		<input class="form-input" type="text" id="nameofFather" name="nameofFather"  required>
+
+		<label class="form-label" for ="CivilStatus"> Civil Status:</label>
+			<select class="form-input" id="CivilStatus" name="CivilStatus" size="1">
+				<option value="Single">Single</option >
+				<option value="Married">Married</option>
+				<option value="Widowed">Widowed</option>
+			</select>
+
+		<label class="form-label" for ="Gender"> Gender:</label>
+		<select class="form-input" id="Gender" name="Gender" size="1">
+		<option value="Male">Male</option>
+		<option value="Female">Female</option>
+		<option value="Others">LGBTQA</option>
+		<option value="PFN">Prefer not to say</option>
+		</select>
+
+		<label class="form-label" for ="EducationalBackground"> Educational Background</label>
+		
+		<textarea class="form-input" name="EducationalBackground" id="EducationalBackground " rows="5" cols="21"></textarea> 
+		
+
+		<label class="form-label" for ="Training"> Training:</label>
+		
+		<textarea class="form-input" name="Training" id = " Training" rows="5" cols="21" required></textarea> 
+		
+
+		<label for ="Seminars" class="form-label"> Seminars:</label>
+		<textarea class="form-input" name="Seminars" id= "Seminars"rows="5" cols="21" required></textarea> 
+		
+
+		<label class="form-label" for ="WorkExperience"> Work Experience:</label>
+		
+		<textarea class="form-input" name="WorkExperience" id="WorkExperience" rows="5" cols="21" required></textarea> 
+		
+		<label class="form-label" for ="WorkDuration"> Work Duration:</label>
+		<input class="form-input" type="text" id="WorkDuration" name="WorkDuration">
+
+		<label class="form-label" for ="CompanyName"> Company Name:</label>
+		<input class="form-input" type="text" id="CompanyName" name="CompanyName">
+
+		<label class="form-label" for ="FormerPosition"> Position:</label>
+		
+		<select class="form-input" id="FormerPosition" name="FormerPosition" size="1">
+		<option value="TL">Team Leader</option>
+		<option value="M">Manager</option>
+		<option value="AM">Assistant Manager</option>
+		<option value="AM">Others</option>
+		</select>
+
+		<label class="form-label" for ="ReasonsForLeaving"> Reasons for Leaving:</label>
+		<textarea class="form-input" name="ReasonsForLeaving" id="ReasonsForLeaving" rows="5" cols="21"></textarea> 
+
+	<h1>Company Data</h1>
+	
+		
+		<label class="form-label" for ="CurrentPosition">Current Position:</label>
+		<select class="form-input" name="CurrentPosition" size="1">
+		<option value="TL">Trainee</option>
+		<option value="TL">Team Leader</option>
+		<option value="M">Manager</option>
+		<option value="AM">Assistant Manager</option>
+		<option value="AM">Others</option>
+		</select>
+
+		
+		<label class="form-label" for ="Status"> Status:</label>
+		<input class="form-input" type="text" id="Status" name="Status">
+
+		<Label class="form-label" for ="Rate">Rate per Hour</label> 
+		<select class="form-input" id="Rate" name="Rate" size="1">
+		<option value="5">150php per hr</option>
+		<option value="10">200php per hr</option>
+		<option value="15">250php per hr</option>
+		<option value="20">300php per hr</option>
+		<option value="25">350php per hr</option>
+		<option value="30">400php per hr</option>
+		<option value="40+">450php and above per hr</option>
+		</select>
+		
+
+	<h1>Public Data</h1>
+
+		<label class="form-label" for ="SSS"> SSID no:</label>
+		<input class="form-input" type="number" id="SSS" name="SSS">
+
+		<label  class="form-label" for ="PAGIBIG"> PAGIBIG ID no:</label>
+		<input class="form-input" type="number" id="PAGIBIG" name="PAGIBIG">
+		
+		<label class="form-label" for ="PhilHealth"> PHILHEALTH ID no:</label>
+		<input class="form-input" type="number" id="PhilHealth" name="PhilHealth">
+				
+		<label class="form-label" for ="taxid"> TAX ID no:</label>
+		<input class="form-input" type="number" id="taxid" name="taxid">
+		
+		<label class="form-label" for ="UMID"> UMID ID no:</label>
+		<input class="form-input"  type="number" id="UMID" name="UMID">
+		
+		<label class="form-label" for ="PHILSYS"> PHILSYS ID no:</label>
+		<input class="form-input" type="number" id="PHILSYS" name="PHILSYS">
+		
+		<input class="form-input" type="submit" style="width: auto;" value="Submit">
+	</form>
+	</div>
+</body>
+</html>
+
+	
+	
+
