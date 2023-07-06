@@ -20,7 +20,7 @@ function myFunction() {
       document.getElementById("action_page").action = "cha_sys_new_customerLogin.html";
       break;
     case "6":
-      document.getElementById("action_page").action = "cha_sys_new_adminlogin.html";
+      document.getElementById("action_page").action = "/payroll/cha_pyr_inputdata.html";
       break;
     case "7":
       document.getElementById("action_page").action = "/scm/scm_warehouse_inventory.html";
