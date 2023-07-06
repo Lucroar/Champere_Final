@@ -113,3 +113,13 @@ body{
   .dropdown-content a:hover {background-color: #ddd;}
   
   .show {display:block;}
+
+
+  .back-container {
+  place-items: center;
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 50px 100px 50px 100px;
+  padding-top: 50px;
+  }
