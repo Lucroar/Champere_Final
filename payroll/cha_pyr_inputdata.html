@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payroll Data Form</title>
+    <link rel="stylesheet" type="text/css" href="cha_pyr_stylesheet.css">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="slogan1">
+        <div class="slogan-text1">
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <a href="" id="white">www.champère.com</a>
+        </div>
+    </div>
+    <br><br><br><br><br><br>
+    <center>
+        <img src="champerelogo.png" alt="champere logo" width="200px" height="200px">
+        <h2>Payroll Data Form</h2>
+    </center>
+    <form action="cha_pyr_results.php" method="post" class="form-container">
+            <br><br>
+            <label for="ename" class="form-label">Employee Name:</label>
+            <input type="text" class="form-input" id="ename" name="ename" placeholder="Surname, First Name, Middle Name" required><br><br>
+            
+            <label for="enumber" class="form-label">Employee Number:</label>
+            <input type="text" class="form-input" id="enumber" name="enumber" placeholder="Enter employee number" required><br><br>
+            
+            <label for="cposition" class="form-label">Position in the Company:</label><br>
+            <select name="cposition" id="cposition" class="form-select">
+                <option value="Regular Employee">Regular Employee</option>
+                <option value="Intern">Intern</option>
+                <option value="Accountant">Accountant</option>
+                <option value="Human Resource">Human Resource</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Supply Chain Management">Supply Chain Management</option>
+                <option value="Payroll">Payroll</option>
+            </select><br><br>
+            
+            <label for="edate" class="form-label">Employment Date:</label>
+            <input type="date" class="form-input" id="edate" name="edate" required><br><br>
+
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" class="form-input" name="email" id="email" placeholder="Enter your email" required><br><br>
+
+            <label for="cnum" class="form-label">Contact Number:</label>
+            <input type="tel" class="form-input" id="cnum" name="cnum" required placeholder="Enter your contact number"><br><br>
+
+            <label for="tnum" class="form-label">Telephone Number:</label>
+            <input type="tel" class="form-input" id="tnum" name="tnum" required placeholder="Enter your telephone number"><br><br>
+            
+            <label for="daysworked" class="form-label">Number of Days Worked:</label>
+            <input type="text" class="form-input" id="daysworked" name="daysworked" required><br><br>
+            
+            <label for="rate" class="form-label">Rate Per Day:</label>
+            <input type="text" class="form-input" id="rate" name="rate" placeholder="Enter your rate per day" required><br><br>
+            
+            <label for="overtime" class="form-label">Number of Times Did Overtime:</label>
+            <input type="text" class="form-input" id="overtime" name="overtime" required><br><br>
+
+            <p id="white">Additional Payment:</p>
+            <label for="bonus1" class="form-label">Holiday Payment</label>
+            <input type="text" class="form-input" id="bonus1" name="bonus1" placeholder="Enter 0 if none" required>
+
+            <label for="bonus2" class="form-label">13th Month Payment</label>
+            <input type="text" class="form-input" id="bonus2" name="bonus2" placeholder="Enter 0 if none" required>
+
+            <label for="bonus3" class="form-label">Bonus Payment</label>
+            <input type="text" class="form-input" id="bonus3" name="bonus3" placeholder="Enter 0 if none" required>
+
+            <label for="bonus4" class="form-label">Overtime Payment</label>
+            <input type="text" class="form-input" id="bonus4" name="bonus4" placeholder="Enter 0 if none" required><br><br>
+
+            <label for="mop" class="form-label">Mode of Payment:</label>
+            <select name="mop" id="mop" class="form-select">
+                <option value="Cash">Cash</option>
+                <option value="Credit Card">Credit Card</option>
+                <option value="Debit Card">Debit Card</option>
+                <option value="Mobile Payment">Mobile Payment</option>
+            </select><br><br>
+
+            <label for="message" class="form-label">Message:</label>
+            <textarea id="message" name="message" required class="textarea"></textarea><br><br><br><br>
+
+        <input type="submit" name="submit" value="Submit" class="form-button">
+    </form>
+    <br><br><br><br><br><br>
+    <div class="slogan2">
+        <div class="slogan-text2">
+            <h1>Champère</h1>
+            <h2>Get your very <br><br> own bottle now!</h2>
+            <a href="" id="white">SHOP NOW</button>
+        </div>
+    </div>
+</body>
+</html>
