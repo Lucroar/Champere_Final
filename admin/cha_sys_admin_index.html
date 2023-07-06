@@ -2,72 +2,8 @@
 <html lang="en">
 <head>
     <title>Champeré</title>
-    <link rel="stylesheet" href="../cha_sys_view_formstylesheet.css">
+    <link rel="stylesheet" href="./cha_sys_view_adminstyle.css">
     <link rel="icon" type="image/x-icon" href="../img/Champeré logo.png">
-    <style>
-
-    body{
-        background-color: white;
-        background-image: none;
-    }
-
-    .navbar-color{
-        background-color: #500113;
-        margin: 0px;
-
-    }
-    .navbar {
-        position: sticky;
-        height: 40px;
-        background-clip: border-box;
-        width: 90%;
-        margin: auto;
-        padding: 20px 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .navbar img {
-        height: 50px;
-    }
-
-    .navbar ul li {
-        list-style: none;
-        display: inline-block;
-        margin: 0 20px;
-        position: relative;
-    }
-    
-    .navbar ul li a {
-        text-decoration: none;
-        font-size: 13px;
-        color: #FDCD93;
-        text-transform: uppercase;
-    }
-
-    .title {
-        font-family: "Pinyon Script";
-        text-align: center;
-        font-size: 40px;
-        padding: 0px;
-        color:#FDCD93;
-    }
-
-    #login {
-        display: block;
-        width: 60px;
-        padding: 10px 20px;
-        color: #FDCD93;
-        background-color: #79472E;
-        text-align: center;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.2s ease-in-out;
-        font-size: 12px;
-    }
-    </style>
-    
 </head>
 <body>
     <div class="navbar-color">
@@ -86,5 +22,67 @@
     </div>
     </div>
     
+    <div class="table-container">
+        <table id="inventory-table">
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>In Count</th>
+              <th>Out Count</th>
+              <th>Current Stocks</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="5" class="no-items">No items found.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const successMessage = urlParams.get('message');
+
+    // Display the success message as an alert
+    if (successMessage) {
+      alert(successMessage);
+    }
+
+    // Fetch inventory data from the server and populate the table
+    function fetchInventory() {
+      fetch('scm_fetch_inventory.php')
+        .then(response => response.json())
+        .then(data => {
+          const inventoryTable = document.getElementById('inventory-table').querySelector('tbody');
+          inventoryTable.innerHTML = '';
+
+          if (data.length > 0) {
+            data.forEach(item => {
+              const row = document.createElement('tr');
+              row.innerHTML = `
+                <td>${item.ProductName}</td>
+                <td>${item.InCount}</td>
+                <td>${item.OutCount}</td>
+                <td>${item.CurrentStocks}</td>
+                <td>${item.Price}</td>
+              `;
+              inventoryTable.appendChild(row);
+            });
+
+            document.querySelector('.no-items').textContent = '';
+          } else {
+            document.querySelector('.no-items').textContent = 'No items found.';
+          }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+    
+
+    // Fetch inventory data initially
+    fetchInventory();
+    </script>
 </body>
 </html>
