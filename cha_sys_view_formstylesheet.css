@@ -192,7 +192,7 @@ body {
     margin: 0 auto;
     padding: 50px 100px 50px 100px;
     padding-top: 50px;
-
+    justify-content: center;
 }
 
 .form-header{
@@ -285,3 +285,32 @@ margin: 1em -1em;
     width: 225px;
     height: 35px;   
 }
+
+/* Back Button */
+.back-button {
+    padding: 8px 17px;
+    background-color: #693b24;
+    font-size: 15px;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.back-button:hover{
+    background-color: #974f33;
+}
+.flex-container {
+   float: left;
+   margin-top: 20px;
+   margin-left: 20px;
+}
+.flex-container-payroll {
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+ }
+
+
+
