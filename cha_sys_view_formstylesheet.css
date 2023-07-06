@@ -288,9 +288,9 @@ margin: 1em -1em;
 
 /* Back Button */
 .back-button {
-    padding: 10px 20px;
+    padding: 8px 17px;
     background-color: #693b24;
-    font-size: 18px;
+    font-size: 15px;
     color: #ffffff;
     border: none;
     border-radius: 5px;
@@ -302,3 +302,6 @@ margin: 1em -1em;
     background-color: #974f33;
 }
 
+.flex-box {
+    float: left;
+}
