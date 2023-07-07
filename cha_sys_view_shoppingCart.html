@@ -152,7 +152,7 @@
                 <li><a href="cha_sys_view_profile.html" class="nav-list">Profile</a></li>
                 <li><a href="cha_sys_new_about-us.html" class="nav-list">About Us</a></li>
                 <li><a href="cha_sys_view_faqs.html" class="nav-list">FAQs</a></li>
-                <li><a id="login" href="cha_sys_new_customerlogin.html">Log Out</a></li>
+                <li><a id="login" onclick="logOut()">Log Out</a></li>
             </ul>
     
         </div>
@@ -176,11 +176,20 @@
         <ul class="listCard">
         </ul>
         <div class="checkOut">
-            <div class="total">0</div>
-            <div class="closeShopping">Close</div>
+            <div class="total" >0</div>
+                <div class="closeShopping">Close</div>
         </div>
     </div>
 
     <script src="cha_sys_new_javaScript.js"></script>
+    <script>
+        function logOut(){
+        
+            if (confirm("Do you want to Logout?") == true) {
+            window.location.href="/cha_sys_new_index.html";
+            } else {    
+            }
+        }
+    </script>
 </body>
 </html>

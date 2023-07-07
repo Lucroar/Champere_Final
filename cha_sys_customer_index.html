@@ -14,7 +14,7 @@
             <li><a href="/cha_sys_customer_profile.html" class="nav-list">Profile</a></li>
             <li><a href="/cha_sys_customer_aboutUs.html" class="nav-list">About Us</a></li>
             <li><a href="/cha_sys_customer_faqs.html" class="nav-list">FAQs</a></li>
-            <li><a id="login" href="/cha_sys_new_index.html">Log Out</a></li>
+            <li><a id="login" onclick="logOut()">Log Out</a></li>
         </ul>
 
     </div>
@@ -24,5 +24,14 @@
     <br><br>
     <a class="button" href="/cha_sys_view_shoppingCart.html">Buy now!</a>
     </div>
+    <script>
+        function logOut(){
+        
+            if (confirm("Do you want to Log out?") == true) {
+            window.location.href="/cha_sys_new_index.html";
+            } else {    
+            }
+        }
+    </script>
 </body>
 </html>
