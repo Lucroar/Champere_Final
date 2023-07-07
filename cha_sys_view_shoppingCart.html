@@ -2,11 +2,28 @@
 <html lang="en">
 <head>
     <title>Champeré</title>
-    <link rel="stylesheet" href="cha_sys_view_formstylesheet.css">
     <link rel="icon" type="image/x-icon" href="./img/Champeré logo.png">
     <style>
-    body{
-        font-family: system-ui;
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Noto+Sans&family=Pinyon+Script&display=swap');
+    body {
+        background-color: #fbefda;
+        margin: 0%;
+        margin-bottom: 10px;
+        background-image: url(./img/champagnetest.jpg);
+        background-size: cover;
+        font-family: "Noto Sans", 'Times New Roman', sans-serif;
+    }
+    .background {
+        place-items: center;
+        text-align: center;
+        max-width: 500px;
+        max-height: 800px;
+        border-radius: 20px;
+        background-color: rgb(255 255 255 / 0.3);
+        box-shadow: 0 10px 15px rgba(25, 25, 25, 1);
+        backdrop-filter: blur(10px);
+        overflow: hidden;
+        margin-top: 30px;
     }
     .container{
     
@@ -18,6 +35,87 @@
         margin: auto;
         transition: 0.5s;
     }
+        .homepage {
+        color: white;
+        text-align: center;
+        font-size: 40px;
+    }
+    .header-container {
+        max-width: 600px;
+        margin-left: 80px;
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+    .navbar-color{
+        background-color: #500113;
+        margin: 0px;
+    }
+    .navbar {
+        height: 60px;
+        background-clip: border-box;
+        width: 90%;
+        margin: auto;
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .navbar img {
+        height: 80px;
+    }
+    .navbar ul li {
+        list-style: none;
+        display: inline-block;
+        margin: 0 20px;
+        position: relative;
+    }
+    .navbar ul li a {
+        text-decoration: none;
+        font-size: 15px;
+        color: #FDCD93;
+        text-transform: uppercase;
+    }
+    .nav-list:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #FDCD93;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+    .nav-list:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+    #login {
+        display: block;
+        width: 80px;
+        padding: 10px 20px;
+        color: #FDCD93;
+        background-color: #79472E;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+        font-size: 15px;
+    }
+    #login:hover {
+        background-color: #bf6541;
+    }
+    #slogan {
+        display: block;
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 60px;
+        font-weight: bold;
+        color: #FDCD93;
+    }
+
+    
     header{
         display: grid;
         grid-template-columns: 1fr 50px;

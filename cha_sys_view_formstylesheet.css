@@ -100,19 +100,19 @@ body {
     color: #FDCD93;
 }
 
-/*For company information websites*/
+    /*For company information websites*/
 
 .container1{
     float: left;
     margin: 50px;
     margin-right: 0px;
-}
+    }
 
 .container2{
     float: right;
     margin: 50px;
     margin-left: 0px;
-}
+    }
 
 .text-container{
     place-items: center;
@@ -124,7 +124,7 @@ body {
     border-radius: 10px;
     background-color: rgba(85, 45, 54, 0.597);
     box-shadow: 0 10px 30px rgba(49, 6, 15, 0.2);
-}
+    }
 
 .text-title{
     font-family: 'Pinyon Script';
@@ -133,7 +133,7 @@ body {
     font-size: 45px;
     font-weight: 10px;
     color: #FDCD93;
-}
+    }
 
 .text-header {
     margin-top: 0;
@@ -141,14 +141,14 @@ body {
     font-size: 30px;
     font-weight: bold;
     color: #FDCD93;
-}
+    }
 
 .text-body {
     font-size: 20px;
     color: #FDCD93;
     text-align: center;
     margin-bottom: 15px;
-}
+    }
 
 .button {
     display: block;
@@ -165,11 +165,11 @@ body {
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
     font-size: 18px;
-}
+    }
 
 .button:hover {
     background-color: #bf6541;
-}
+    }
 
 /*for login pages*/
 .background {

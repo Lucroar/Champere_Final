@@ -3,8 +3,151 @@
     <head>
         <meta charset="UTF-8">
         <title>Customer Login</title>
-        <link rel="stylesheet" href="cha_sys_view_formstylesheet.css">
         <link rel="icon" type="image/x-icon" href="./img/Champeré logo.png">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Noto+Sans&family=Pinyon+Script&display=swap');
+            body {
+                background-color: #fbefda;
+                margin: 0%;
+                margin-bottom: 10px;
+                background-image: url(./img/champagnetest.jpg);
+                background-size: cover;
+                font-family: "Noto Sans", 'Times New Roman', sans-serif;
+            }
+            .background {
+                place-items: center;
+                text-align: center;
+                max-width: 500px;
+                max-height: 800px;
+                border-radius: 20px;
+                background-color: rgb(255 255 255 / 0.3);
+                box-shadow: 0 10px 15px rgba(25, 25, 25, 1);
+                backdrop-filter: blur(10px);
+                overflow: hidden;
+                margin-top: 30px;
+            }
+            
+            .form-container {
+                place-items: center;
+                text-align: center;
+                max-width: 400px;
+                margin: 0 auto;
+                padding: 50px 100px 50px 100px;
+                padding-top: 50px;
+                justify-content: center;
+            }
+            
+            .form-header{
+                display: block;
+                margin-top: 0;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                font-size: 15px;
+                font-weight: bold;
+                color: rgb(255, 255, 255);
+            }
+            
+            .form-label {
+                display: block;
+                margin-bottom: 10px;
+                font-weight: bold;
+                font-size: 19px;
+                color: #fff;
+            }
+            
+            .form-input {
+                width: 95%;
+                padding: 10px;
+                margin-bottom: 30px;
+                border: none;
+                border-radius: 5px;
+                background-color: #f2f2f2;
+                
+            }
+            
+            .form-input:focus {
+                outline: none;
+                box-shadow: 0 0 5px rgba(254, 254, 254, 0.482);
+            }
+            
+            .form-button {
+                padding: 10px 20px;
+                background-color: #974f33;
+                font-size: 18px;
+                color: #ffffff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.2s ease-in-out;
+            }
+            
+            .form-button:hover{
+                background-color: #FDCD93;
+            }
+            
+            /*Cutomer login hr*/
+            .divider {
+                display: flex;
+            
+                &:before,
+                &:after {
+                    content: "";
+                    flex: 1;
+                }
+            
+            }
+              
+            .line {
+            align-items: center;
+            margin: 1em -1em;
+            
+            &:before,
+            &:after {
+                height: 1px;
+                margin: 0 1em;
+            }
+            }
+              
+            .razor {
+                &:before,
+                &:after {
+                box-shadow: 0 0.5px 0 gray; 
+                }
+            }
+            
+            .form-footer{
+                margin-top: 20px;
+                font-size: 14px;
+            }
+                     
+            /* Back Button */
+            .back-button {
+                padding: 8px 17px;
+                background-color: #974f33;
+                font-size: 15px;
+                color: #ffffff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.2s ease-in-out;
+            }
+            
+            .back-button:hover{
+                background-color: #FDCD93;
+            }
+            .flex-container {
+               float: left;
+               margin-top: 20px;
+               margin-left: 20px;
+            }
+            .flex-container-payroll {
+                float: left;
+                margin-top: 20px;
+                margin-left: 20px;
+             }
+            
+            
+                    </style>
     </head>
 <body>
     <center>
