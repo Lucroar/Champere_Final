@@ -79,7 +79,7 @@
             <li><a href="/cha_sys_admin_faqs.html">Marketing</a></li>
             <li><a href="/cha_sys_admin_faqs.html">Payroll</a></li>
             <li><a href="cha_sys_admin_scmview.html">Supply Chain Management</a></li>
-            <li><a id="login" href="/cha_sys_employee_login.html">Log Out</a></li>
+            <li><a id="login" onclick="logOut()">Log Out</a></li>
         </ul>
     </div>
     </div>
@@ -145,6 +145,16 @@
 
     // Fetch inventory data initially
     fetchInventory();
+
+    // log out
+    function logOut(){
+    if (confirm("Do you want to Logout?") == true) {
+    window.location.href="/cha_sys_employee_login.html";
+    } else {    
+    }
+}
+
+
     </script>
 
     

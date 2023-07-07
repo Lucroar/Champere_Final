@@ -28,6 +28,7 @@
             font-weight: bold;
             font-size: 19px;
             color: #fff;
+            text-decoration: none;
         }
 
         .form-input {
@@ -64,6 +65,20 @@
         input[type=submit]:hover{
             background-color: #FDCD93;
         }
+        .back-button {
+            padding: 4px 13px;
+            background-color: #fff;
+            font-size: 15px;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            color: black;
+                     }
+        .back-button:hover{
+            background-color: #FDCD93;
+        }
 
     </style>
 </head>
@@ -72,7 +87,14 @@
     <h2>Champeré</h2>
     </div>  
     <div class="container">
-        <form action="cha_act_new_customerInfo.php" method="POST" onsubmit="return validateForm()">
+        <div class="flex-container">
+            <a href="/cha_sys_new_customerlogin.html">
+               <button class="back-button" onclick="logOut()">
+                Back
+                </button>
+            </a>
+            </div> 
+           <br><form action="cha_act_new_customerInfo.php" method="POST" onsubmit="return validateForm()">
             <label class="form-label" for="firstName">First Name</label>
             <input class="form-input" type="text" id="firstName" name="firstName" required></input> 
 
@@ -107,11 +129,20 @@
              <label class="form-label" for="confirmPassword">Confirm Password</label>
             <input class="form-input" type="password" id="confirmPassword" name="confirmPassword" required>
 
-            <input class="form-input" type="submit" style="width: auto;" value="Submit">
-            
+            <input class="form-input" type="submit" style="width: auto;" value="Submit">   
         </form>
     </div>
 
     <script src="cha_act_new_signup.js"></script>
+    <script>
+        function logOut(){
+        
+        if (confirm("Do you want to Exit?") == true) {
+        window.location.href="/cha_sys_new_customerlogin.html";
+        } else {    
+        
+        }
+    }
+    </script>
 </body>
 </html>
