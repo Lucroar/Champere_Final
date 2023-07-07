@@ -50,39 +50,39 @@ closeShopping.addEventListener('click', ()=>{
 let products = [
     {
         id: 1,
-        name: 'Vin de fraise',
+        name: 'Vin de raisin',
         img: 'grape_wine.jpeg',
-        price: 120000
+        price: 8000
     },
     {
         id: 2,
-        name: 'PRODUCT NAME 2',
-        img: '2.PNG',
-        price: 120000
+        name: 'Vin de grenade',
+        img: 'pomegranate_wine.jpeg',
+        price: 7500
     },
     {
         id: 3,
-        name: 'PRODUCT NAME 3',
-        img: '3.PNG',
-        price: 220000
+        name: 'Vin de fraise',
+        img: 'strawberry_wine.webp',
+        price: 10000
     },
     {
         id: 4,
-        name: 'PRODUCT NAME 4',
-        img: '4.PNG',
-        price: 123000
+        name: 'Raisins et vin de pêche',
+        img: 'premium_grape_wine.jpeg',
+        price: 4000
     },
     {
         id: 5,
-        name: 'PRODUCT NAME 5',
-        img: '5.PNG',
-        price: 320000
+        name: 'Vin de pêche',
+        img: 'peach_wine.jpeg',
+        price: 8000
     },
     {
         id: 6,
-        name: 'PRODUCT NAME 6',
-        img: '6.PNG',
-        price: 120000
+        name: 'Vin de orchidee',
+        img: 'flower_wine.jpeg',
+        price: 12000
     }
 ];
 let listCards  = [];
@@ -94,7 +94,7 @@ function initApp(){
             <img src="img/${value.img}">
             <div class="title">${value.name}</div>
             <div class="price">${value.price.toLocaleString()}</div>
-            <button onclick="addToCard(${key})">Add To Card</button>`;
+            <button onclick="addToCard(${key})">Add To Cart</button>`;
         list.appendChild(newDiv);
     })
 }
