@@ -17,7 +17,7 @@ function myFunction() {
       document.getElementById("action_page").action = "cha_sys_new_about-us.html";
       break;
     case "5": //Payroll
-      document.getElementById("action_page").action = "cha_sys_new_customerLogin.html";
+      document.getElementById("action_page").action = "/payroll/cha_pyr_inputdata.html.html";
       break;
     case "6": //Payroll
       document.getElementById("action_page").action = "/payroll/cha_pyr_inputdata.html";
@@ -34,11 +34,17 @@ function myFunction() {
 
 let openShopping = document.querySelector('.shopping');
 let closeShopping = document.querySelector('.closeShopping');
+let buyShopping = document.querySelector('.buy');
 let list = document.querySelector('.list');
 let listCard = document.querySelector('.listCard');
 let body = document.querySelector('body');
 let total = document.querySelector('.total');
 let quantity = document.querySelector('.quantity');
+
+buyShopping.addEventListener('click', () => {
+    alert("Please enter payment and delivery information first.")
+    window.location.href = 'cha_sys_new_index.html';
+});
 
 openShopping.addEventListener('click', ()=>{
     body.classList.add('active');
