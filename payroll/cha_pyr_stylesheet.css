@@ -1,13 +1,14 @@
 body {
-    background-color: #fbefda;
-    margin: 0%;
+    background-color: white;
+    margin: 5%;
 }
 
 .form-container{
+    margin-top: 20px;
     max-width: 75%;
     margin: 0 auto;
     padding: 20px;
-    background-color: #894e32;
+    background-color: #3e000f;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
@@ -23,7 +24,7 @@ body {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
-    color: #fff;
+    color: #FDCD93;
 }
 
 .form-input {
@@ -109,7 +110,7 @@ tr:hover {background-color: rgb(233, 238, 81);}
 }
 
 #white {
-    color: white;
+    color: #FDCD93;
 }
 
 .slogan2 {
@@ -132,3 +133,18 @@ tr:hover {background-color: rgb(233, 238, 81);}
     width: 60%;
 }
 
+h2{
+    text-align: center;
+    font-size: 40px;
+    padding: 0px;
+    color:#FDCD93;
+}
+
+#submit {
+    color: #FDCD93;
+    background-color: #79472E;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}

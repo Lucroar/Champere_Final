@@ -4,25 +4,25 @@ function myFunction() {
   
   switch (link) {
     
-    case "1":
+    case "1": //Admin
       document.getElementById("action_page").action = "/admin/cha_sys_admin_index.html";
       break;
-    case "2":
+    case "2": //Accountancy
       document.getElementById("action_page").action = "cha_sys_view_faqs.html";
       break;
-    case "3":
+    case "3": //Human Resource
       document.getElementById("action_page").action = "/hrd/cha_hrd_editemployee.html";
       break;
-    case "4":
+    case "4": //Marketing
       document.getElementById("action_page").action = "cha_sys_new_about-us.html";
       break;
-    case "5":
+    case "5": //Payroll
       document.getElementById("action_page").action = "cha_sys_new_customerLogin.html";
       break;
-    case "6":
+    case "6": //Payroll
       document.getElementById("action_page").action = "/payroll/cha_pyr_inputdata.html";
       break;
-    case "7":
+    case "7": //Supply Chain Management
       document.getElementById("action_page").action = "./scm/scm_warehouse_inventory.html";
       break;
     default:

@@ -1,5 +1,4 @@
 CREATE TABLE payroll_data (
-    id INT AUTO_INCREMENT,
     ename VARCHAR(50) NOT NULL,
     enumber INT NOT NULL,
     cposition VARCHAR(50) NOT NULL,
@@ -11,7 +10,7 @@ CREATE TABLE payroll_data (
     rate INT NOT NULL,
     overtime INT NOT NULL,
     bonus1 INT NOT NULL,
-    bonu2 INT NOT NULL,
+    bonus2 INT NOT NULL,
     bonus3 INT NOT NULL,
     bonus4 INT NOT NULL,
     mop VARCHAR(50) NOT NULL,
