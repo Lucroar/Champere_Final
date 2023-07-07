@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Champeré</title>
-    <link rel="stylesheet" href="../cha_sys_view_formstylesheet.css">
+    <link rel="stylesheet" href="/admin/cha_sys_view_adminstyle.css">
     <link rel="icon" type="image/x-icon" href="../img/Champeré logo.png">
     <style>
 
@@ -74,7 +74,7 @@
     <div class="navbar">
         <p class="title">Champeré</p>
         <ul>
-            <li><a href="/cha_sys_admin_profile.html">Admin</a></li>
+            <li><a href="/admin/cha_sys_admin_index.html">Admin</a></li>
             <li><a href="/cha_sys_admin_aboutUs.html">Accountancy</a></li>
             <li><a href="/cha_sys_admin_faqs.html">Human Resource</a></li>
             <li><a href="/cha_sys_admin_faqs.html">Marketing</a></li>
@@ -84,5 +84,68 @@
         </ul>
     </div>
     </div>
+
+    <div class="table-container">
+        <table id="inventory-table">
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>In Count</th>
+              <th>Out Count</th>
+              <th>Current Stocks</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="5" class="no-items">No items found.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const successMessage = urlParams.get('message');
+
+    // Display the success message as an alert
+    if (successMessage) {
+      alert(successMessage);
+    }
+
+    // Fetch inventory data from the server and populate the table
+    function fetchInventory() {
+      fetch('scm_fetch_inventory.php')
+        .then(response => response.json())
+        .then(data => {
+          const inventoryTable = document.getElementById('inventory-table').querySelector('tbody');
+          inventoryTable.innerHTML = '';
+
+          if (data.length > 0) {
+            data.forEach(item => {
+              const row = document.createElement('tr');
+              row.innerHTML = `
+                <td>${item.ProductName}</td>
+                <td>${item.InCount}</td>
+                <td>${item.OutCount}</td>
+                <td>${item.CurrentStocks}</td>
+                <td>${item.Price}</td>
+              `;
+              inventoryTable.appendChild(row);
+            });
+
+            document.querySelector('.no-items').textContent = '';
+          } else {
+            document.querySelector('.no-items').textContent = 'No items found.';
+          }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+    
+
+    // Fetch inventory data initially
+    fetchInventory();
+    </script>
 </body>
 </html>

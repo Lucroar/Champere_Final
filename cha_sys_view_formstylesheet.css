@@ -230,7 +230,7 @@ body {
 
 .form-button {
     padding: 10px 20px;
-    background-color: #693b24;
+    background-color: #974f33;
     font-size: 18px;
     color: #ffffff;
     border: none;
@@ -240,7 +240,7 @@ body {
 }
 
 .form-button:hover{
-    background-color: #974f33;
+    background-color: #FDCD93;
 }
 
 /*Cutomer login hr*/
@@ -289,7 +289,7 @@ margin: 1em -1em;
 /* Back Button */
 .back-button {
     padding: 8px 17px;
-    background-color: #693b24;
+    background-color: #974f33;
     font-size: 15px;
     color: #ffffff;
     border: none;
@@ -299,7 +299,7 @@ margin: 1em -1em;
 }
 
 .back-button:hover{
-    background-color: #974f33;
+    background-color: #FDCD93;
 }
 .flex-container {
    float: left;
