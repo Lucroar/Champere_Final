@@ -115,7 +115,7 @@
 
     // Fetch inventory data from the server and populate the table
     function fetchInventory() {
-      fetch('scm_fetch_inventory.php')
+      fetch('../scm/scm_fetch_inventory.php')
         .then(response => response.json())
         .then(data => {
           const inventoryTable = document.getElementById('inventory-table').querySelector('tbody');
@@ -146,5 +146,7 @@
     // Fetch inventory data initially
     fetchInventory();
     </script>
+
+    
 </body>
 </html>
