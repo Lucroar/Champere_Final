@@ -11,7 +11,7 @@ function myFunction() {
       document.getElementById("action_page").action = "cha_sys_view_faqs.html";
       break;
     case "3":
-      document.getElementById("action_page").action = "cha_sys_view_profile.html";
+      document.getElementById("action_page").action = "/hrd/cha_hrd_editemployee.html";
       break;
     case "4":
       document.getElementById("action_page").action = "cha_sys_new_about-us.html";
@@ -23,7 +23,7 @@ function myFunction() {
       document.getElementById("action_page").action = "/payroll/cha_pyr_inputdata.html";
       break;
     case "7":
-      document.getElementById("action_page").action = "/scm/scm_warehouse_inventory.html";
+      document.getElementById("action_page").action = "./scm/scm_warehouse_inventory.html";
       break;
     default:
       document.getElementById("action_page").action = "";
