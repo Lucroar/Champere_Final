@@ -146,3 +146,4 @@ function changeQuantity(key, quantity){
     }
     reloadCard();
 }
+
