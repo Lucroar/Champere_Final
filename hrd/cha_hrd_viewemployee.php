@@ -132,23 +132,45 @@ p, h2{
     transition: background-color 0.2s ease-in-out;
     font-size: 12px;
 }
-
+.form-container{
+    margin-top: 20px;
+    max-width: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #3e000f;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+#white {
+    color: #FDCD93;
+}
+h2{
+    text-align: center;
+    font-size: 40px;
+    padding: 0px;
+    color:#FDCD93;
+}
 
         </style>
 </head>
 <body>
-    <div class="navbar-color">
-        <div class="navbar">
-            <p class="title">Champeré</p>
-            <ul>
-                <li><a id="login" href="/cha_sys_employee_login.html">Log Out</a></li>
-            </ul>
-        </div>
+<div class="navbar-color">
+    <div class="navbar">
+        <p class="title">Champeré</p>
+        <ul>
+            <li><a href="cha_sys_view_viewemployee.php">Human Resource</a></li>
+            <li><a id="login" onclick="logOut()">Log Out</a></li>
+        </ul>
     </div>
+    </div>
+    <div class="form-container" id="white">
     <h2> Retrieved Form Data</h2>
+</div>
     <?php
     if ($result ->num_rows > 0){
         while($row= $result->fetch_assoc()){
+            echo '<div class="form-container" id="white">';
             echo "<p> <strong> Firstname: </strong>" . $row["Firstname"] . "</p>";
             echo "<p> <strong> address: </strong>" . $row["address"] . "</p>";
             echo "<p> <strong> Contactno: </strong>" . $row["Contactno"] . "</p>";
@@ -175,7 +197,6 @@ p, h2{
             echo "<p> <strong> UMID no: </strong>" . $row["UMID"] . "</p>";
             echo "<p> <strong> PHILSYS: </strong>" . $row["PHILSYS"] . "</p>";
             echo "</div>";
-            echo "<hr>";
         }
 
     } else{
@@ -183,6 +204,6 @@ p, h2{
     }
     $conn -> close();
     ?>
-        <a href="cha_hrd_editemployee.html" class="btn" style="margin: 20px;">New Entry</a>
+    </div>
 </body> 
 </html>

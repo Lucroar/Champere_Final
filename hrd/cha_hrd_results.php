@@ -4,35 +4,20 @@
   <title>Form Submission Result</title>
   <link rel="stylesheet" href="cha_hrd_stylesheet.css">
   <style>
-  @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Noto+Sans&family=Pinyon+Script&display=swap');
-  body {
-    font-family: "Noto Sans", sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-  }
-
-  .container {
-    max-width: 500px;
-    margin: 50px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  h2 {
-    color: #3e000f ;
-    margin-top: 0;
-  }
-
-  p {
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Noto+Sans&family=Pinyon+Script&display=swap');
+body {
+    background-color: #fbefda;
+    margin: 0%;
     margin-bottom: 10px;
-  }
+    background-color: white;
+    background-size: cover;
+    font-family: "Noto Sans", 'Times New Roman', sans-serif;
+}
 
   .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #3e000f;
+    background-color: #bf6541;
     color: white;
     text-decoration: none;
     border-radius: 4px;
@@ -76,19 +61,54 @@
     color: #FDCD93;
     text-transform: uppercase;
 }
+#login {
+    display: block;
+    width: 60px;
+    padding: 10px 20px;
+    color: #FDCD93;
+    background-color: #79472E;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    font-size: 12px;
+}
+
+
+.title {
+  font-family: "Pinyon Script";
+  text-align: center;
+  font-size: 40px;
+  color:#FDCD93;
+}
+
+.form-container{
+  margin-top: 20px;
+  max-width: 50%;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #3e000f;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+#white {
+    color: #FDCD93;
+}
 </style>
 </head>
 
 <body>
-  <div class="navbar-color">
-      <div class="navbar">
+<div class="navbar-color">
+    <div class="navbar">
         <p class="title">Champeré</p>
         <ul>
-            <li><a id="login" href="/cha_sys_employee_login.html">Log Out</a></li>
+            <li><a href="cha_sys_view_viewemployee.php">Human Resource</a></li>
+            <li><a id="login" onclick="logOut()">Log Out</a></li>
         </ul>
-      </div>
     </div>
-  <div class="container">
+    </div>
+    <div class="form-container" id="white">
   <h2>Form Submission Result</h2>
 
 <?php 
@@ -130,7 +150,7 @@ $taxid= $_POST['taxid'];
 $UMID= $_POST['UMID'];
 $PHILSYS= $_POST['PHILSYS'];
 
-
+  echo '<div class="form-container" id="white">';
   echo "<p><strong>First Name: </strong> " . $Firstname . "<p>";
   echo "<p><strong>Address:</strong> " . $address . "<p>";
   echo "<p><strong>Contact no:</strong> " . $Contactno . "<p>";
@@ -156,7 +176,7 @@ $PHILSYS= $_POST['PHILSYS'];
   echo "<p><strong>tax id no:</strong> " . $taxid . "<p>";
   echo "<p><strong>UMID no:</strong> " . $UMID . "<p>";
   echo "<p><strong>PHILSYS no:</strong> " . $PHILSYS . "<p>";
-  
+  echo '<div>';
 } 
 else {
   echo "<p>No form data submitted.</p>";
@@ -166,6 +186,16 @@ else {
             <a href="cha_hrd_editemployee.html" class="btn">New Entry</a>
             <a href="cha_hrd_viewemployee.php" class="btn"> View Employee's Entries</a>
   </div>
+</div>
+  <script>
+        // log out
+        function logOut(){
+        if (confirm("Do you want to Logout?") == true) {
+        window.location.href="../cha_sys_employee_login.html";
+        } else {    
+        }
+    }
+    </script>
 </body>
 </html>
             

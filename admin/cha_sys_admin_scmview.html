@@ -78,7 +78,8 @@
             <li><a href="//admin/cha_sys_view_viewemployee.php">Human Resource</a></li>
             <li><a href="/cha_sys_admin_faqs.html">Marketing</a></li>
             <li><a href="/cha_sys_admin_faqs.html">Payroll</a></li>
-            <li><a href="cha_sys_admin_scmview.html">Supply Chain Management</a></li>
+            <li><a href="cha_sys_admin_scmview.html">SCM (Inbound)</a></li>
+            <li><a href="cha_sys_admin_scmview.html">SCM (Outbound)</a></li>
             <li><a id="login" onclick="logOut()">Log Out</a></li>
         </ul>
     </div>
@@ -149,7 +150,7 @@
     // log out
     function logOut(){
     if (confirm("Do you want to Logout?") == true) {
-    window.location.href="/cha_sys_employee_login.html";
+    window.location.href="../cha_sys_employee_login.html";
     } else {    
     }
 }

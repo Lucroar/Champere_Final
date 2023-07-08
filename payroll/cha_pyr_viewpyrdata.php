@@ -17,18 +17,8 @@ $result = $conn->query($sql);
 <!DOCTYPE html>
 <html>
 <head>
-    <div class="navbar-color">
-        <div class="navbar">
-            <p class="title">Champeré</p>
-            <ul>
-                <li><a href="/cha_sys_admin_faqs.html">Payroll</a></li>
-                <li><a id="login" href="/cha_sys_employee_login.html">Log Out</a></li>
-            </ul>
-        </div>
-    </div>
-    <title>Payroll Data Entries</title>
-    <link rel="stylesheet" type="text/css" href="cha_pyr_stylesheet.css">
-    <style>
+
+<style>
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Noto+Sans&family=Pinyon+Script&display=swap');
 body {
     background-color: #fbefda;
@@ -240,31 +230,31 @@ h2{
     padding: 0px;
     color:#FDCD93;  
 }
-    </style>
+</style>
 </head>
 <body>
 <div class="navbar-color">
         <div class="navbar">
             <p class="title">Champeré</p>
             <ul>
-                <li><a href="/cha_pyr_inputdata.html">Payroll</a></li>
-                <li><a id="login" href="/cha_sys_employee_login.html">Log Out</a></li>
+                <li><a href="cha_pyr_viewpyrdata.php">Payroll</a></li>
+                <li><a id="login" onclick="logOut()">Log Out</a></li>
             </ul>
         </div>
-    </div>
-    <div class="form-container" id="white">
+        </div>
+        <div class="form-container" id="white">
     <h2>Payroll Data Entries</h2>
         <?php
+        echo "<p><strong>Other important datas that has been submitted would not be displayed for the employees privacy.</strong></p>";
+        echo "</div>";
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo "<p><strong>Other important datas that has been submitted would not be displayed for the employees privacy.</strong></p>";
-                echo "<div class='form-data'>";
+                echo '<div class="form-container" id="white">';
                 echo "<p><strong>Employee Name:</strong>" . $row['ename'] . "</p>";
                 echo "<p><strong>Employee Number:</strong>" . $row['enumber'] . "</p>";
                 echo "<p><strong>Position in the Company:</strong>" . $row['cposition'] . "</p>";
                 echo "<p><strong>Date Submitted:</strong>" . $row['created_at'] . "</p>";
                 echo "</div>";
-                echo "<hr>";
             }
         } else {
             echo "<p>No form data found.</p>";
@@ -272,7 +262,17 @@ h2{
 
         $conn->close();
         ?>
+        <div class="form-container" id="white">
         <a href="cha_pyr_inputdata.html" class="btn">New Entry</a>
-    </div>
+        </div>  
+        <script>
+        // log out
+        function logOut(){
+        if (confirm("Do you want to Logout?") == true) {
+        window.location.href="../cha_sys_employee_login.html";
+        } else {    
+        }
+    }
+    </script>
 </body>
 </html>

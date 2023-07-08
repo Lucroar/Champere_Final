@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="UTF-8">
         <title> Champeré Login </title>
         <link rel="stylesheet" href="./cha_sys_view_formstylesheet.css">
         <link rel="icon" type="image/x-icon" href="./img/Champeré logo.png">
@@ -18,7 +19,7 @@
                 <div class="form-container">
                     <form class="form-label" id="action_page" action="" method="get">
                 <div class="form-header">
-                    <a href="cha_sys_new_index.html"><img src="./img/Champeré logo.png" alt="Champeré logo" height="150px"></a>
+                    <a href="cha_sys_new_index.html"><img src="img/Champeré logo.png" alt="Champeré logo" height="150px"></a>
                     <h1> Champeré </h1>
                     <h1> Employee Login </h1>
                 </div>
@@ -26,9 +27,9 @@
                         <option value="1">Admin</option>
                         <option value="2">Accountancy</option>
                         <option value="3">Human Resource</option>
-                        <option value="5">Marketing</option>
-                        <option value="6">Payroll</option>
-                        <option value="7">Supply Chain Management</option>
+                        <option value="4">Marketing</option>
+                        <option value="5">Payroll</option>
+                        <option value="6">Supply Chain Management</option>
                     </select>
 
                 <div class="form-label">
@@ -42,6 +43,37 @@
                 </div>
             </div>
         </center>
-        <script src="/cha_sys_new_javaScript.js"></script>
+        <script>
+            function myFunction() {
+  
+  var link = document.getElementById("framework").value;
+  
+  switch (link) {
+    
+    case "1": //Admin
+      document.getElementById("action_page").action = "/admin/cha_sys_admin_index.html";
+      break;
+    case "2": //Accountancy
+      document.getElementById("action_page").action = "cha_sys_view_faqs.html";
+      break;
+    case "3": //Human Resource
+      document.getElementById("action_page").action = "hrd/cha_hrd_editemployee.html";
+      break;
+    case "4": //Marketing
+      document.getElementById("action_page").action = "cha_sys_new_about-us.html";
+      break;
+    case "5": //Payroll
+      document.getElementById("action_page").action = "payroll/cha_pyr_viewpyrdata.php";
+      break;
+    case "6": //Supply Chain Management
+      document.getElementById("action_page").action = "scm/scm_warehouse_inventory.html";
+      break;
+    default:
+      document.getElementById("action_page").action = "";
+      break;
+  }
+
+}
+        </script>
     </body>
 </html>

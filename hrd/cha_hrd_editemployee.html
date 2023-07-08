@@ -3,18 +3,32 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="cha_hrd_stylesheet.css">
-	<link rel="stylesheet" href="/cha_sys_view_formstylesheet.css">
     <title>Employee Data</title>
+	<style>
+		#login {
+    display: block;
+    width: 60px;
+    padding: 10px 20px;
+    color: #FDCD93;
+    background-color: #79472E;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    font-size: 12px;
+}
+	</style>
 </head>
 <body>
 	<div class="navbar-color">
 		<div class="navbar">
-		  <p class="navbar-title">Champeré</p>
-		  <ul>
-			<li><a id="login" onclick="logOut()">Log Out</a></li>
-		  </ul>
+			<p class="title" style="color: #FDCD93;">Champeré</p>
+			<ul>
+				<li><a href="cha_sys_view_viewemployee.php">Human Resource</a></li>
+				<li><a id="login" onclick="logOut()">Log Out</a></li>
+			</ul>
 		</div>
-	  </div>
+		</div>
 
 	<div class="container">
 	<h1>Personal Data</h1>
