@@ -51,14 +51,14 @@
   
   .form-inputscm:focus {
   outline: none;
-  border-color: #4b4603;
+  border-color: #663e03;
   }
   
   .form-buttonscm {
   display: block;
   width: 100%;
   padding: 12px;
-  background-color: #4b4603;
+  background-color: #663e03;
   color: #fff;
   border: none;
   border-radius: 4px;
