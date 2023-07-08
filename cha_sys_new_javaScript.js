@@ -41,6 +41,10 @@ let body = document.querySelector('body');
 let total = document.querySelector('.total');
 let quantity = document.querySelector('.quantity');
 
+buyShopping.addEventListener('click', () => {
+    alert("Thank you for your purchase!")
+    window.location.href = 'cha_sys_new_index.html';
+});
 
 openShopping.addEventListener('click', ()=>{
     body.classList.add('active');
