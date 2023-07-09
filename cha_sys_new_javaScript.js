@@ -14,7 +14,7 @@ function employeeLogin() {
       document.getElementById("action_page").action = "/hrd/cha_hrd_editemployee.html";
       break;
     case "4": //Marketing
-      document.getElementById("action_page").action = "cha_sys_new_about-us.html";
+      document.getElementById("action_page").action = "/mkt/cha_mkt_inputdata.html";
       break;
     case "5": //Payroll
       document.getElementById("action_page").action = "/payroll/cha_pyr_inputdata.html";
