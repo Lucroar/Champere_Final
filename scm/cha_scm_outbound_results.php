@@ -108,15 +108,40 @@ $result = $conn->query($sql);
       echo "</div>";
       echo "</div>";
     }
-  } else {  
+  } else { 
+    echo '<div class="form-container" id="white">';
     echo "<p>No form data found.</p>";
+    echo "</div>";
   }
-    
+  
+   //Get this (make sure to change the table name)
+        if(isset($_GET['id'])){
+            $id = $_GET['id'];
+            
+            $delete = mysqli_query($conn, "DELETE FROM hlv WHERE id='$id' ");
+            if($delete) {
+                echo '<div class="form-container" id="white">';
+              echo "Data deleted successfully.";
+              echo '</div>';
+              echo '<script>window.location.href = "cha_scm_outbound_results.php";</script>';
+            } else {
+              echo "Error deleting data: " . mysqli_error($conn);
+            }
+          }
+
+    //Get this
+        function deleteData(id) {
+            if (confirm("Do you want to delete this entry?") == true) {
+                window.location.href = "cha_pyr_viewpyrdata.php?id=" + id;
+            } else {
+            }
+        }
+
   // Close the connection
   $conn->close();
   
   ?>
-  <div class='form-data'>
+  </script>
   <a href="cha_scm_view_outbound.html" class="btn">New Entry</a>
   </div>
   <script>

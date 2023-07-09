@@ -55,7 +55,11 @@
                 <label class="form-labelscm">Products:</label>
                 <select class="form-inputscm" id="productname" name="productname" onchange="updateDescription()" required>
                   <option value="" disabled selected>Select a Product...</option>
-                  <option value="Fermented Grape Juice">Fermented Grape Juice</option>
+                  <option value="Grapes">Grapes</option>
+                  <option value="Peach">Peach</option>
+                  <option value="Strawberry">Strawberry</option>
+                  <option value="Pomegranate">Pomegranate</option>
+                  <option value="Orchids">Orchids</option>
                   <option value="Sugar">Sugar</option>
                   <option value="Yeast">Yeast</option>
                   <option value="Glass Bottle">Glass Bottle</option>
@@ -108,8 +112,16 @@
             var selectedOption = select.options[select.selectedIndex].value;
             
             // Set the description based on the selected value
-            if (selectedOption === "Fermented Grape Juice") {
-                description.value = "is an alcoholic beverage created by fermenting grape juice.";
+            if (selectedOption === "Grapes") {
+                description.value = "Fresh grapes for our premium wines";
+            } else if (selectedOption === "Peach") {
+                description.value = "Fresh handpicked peaches for our peach flavored wines";
+            } else if (selectedOption === "Strawberry") {
+                description.value = "Fresh strawberries from Baguio for our strawberry flavored wines";
+            } else if (selectedOption === "Pomegranate") {
+                description.value = "Fresh handpicked pomegranates for our pomegranate flavored wines";
+            } else if (selectedOption === "Orchids") {
+                description.value = "Fresh orchids for our orchid flavored wines";
             } else if (selectedOption === "Sugar") {
                 description.value = "a natural substance that adds sweetness to food and beverages.";
             } else if (selectedOption === "Yeast") {
