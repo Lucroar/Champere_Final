@@ -250,6 +250,7 @@ $result = $conn->query($sql);
                 echo "<p><strong>Employee Number:</strong>" . $row['enumber'] . "</p>";
                 echo "<p><strong>Position in the Company:</strong>" . $row['cposition'] . "</p>";
                 echo "<p><strong>Date Submitted:</strong>" . $row['created_at'] . "</p>";
+                //Get this
                 echo "<div class='container'><a href='cha_pyr_viewpyrdata.php?id=". $row['id'] ."' class='btn' onclick='deleteData(". $row['id'] .")'>Delete</a>";
                 echo "</div>";
                 echo "</div>";
@@ -259,6 +260,7 @@ $result = $conn->query($sql);
             echo "<p>No form data found.</p>";
             echo "</div>";
         }
+        //Get this (make sure to change the table name)
         if(isset($_GET['id'])){
             $id = $_GET['id'];
             $delete = mysqli_query($conn, "DELETE FROM payroll_data WHERE id='$id' ");
@@ -288,6 +290,7 @@ $result = $conn->query($sql);
         }
     }
 
+    //Get this
     function deleteData(id) {
             if (confirm("Do you want to delete this entry?") == true) {
                 window.location.href = "cha_pyr_viewpyrdata.php?id=" + id;
