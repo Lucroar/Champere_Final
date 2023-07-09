@@ -302,20 +302,22 @@
       window.location.href = 'cha_scm_view_outbound.html';
     }
 
-    // Add click event listeners to the buttons
+    // Reset the form fields after submission
+    function resetForm() {
+      document.getElementById('product_name').value = '';
+      document.getElementById('in_count').value = '';
+      document.getElementById('out_count').value = '';
+      document.getElementById('current_stocks').value = '';
+      document.getElementById('price').value = '';
+    }
     document.getElementById('inbound-btn').addEventListener('click', handleInbound);
     document.getElementById('outbound-btn').addEventListener('click', handleOutbound);
-
     // log out
-    function logOut(){
-      if (confirm("Do you want to Log out?") == true) {
-        window.location.href="/cha_sys_employee_login.html";
-      } else {    
+    function logOut() {
+      if (confirm("Do you want to Log out?")) {
+        window.location.href = "/cha_sys_employee_login.html";
       }
     }
-</script>
-
-
-
+  </script>
 </body>
 </html>
