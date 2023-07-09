@@ -24,12 +24,12 @@ $database="champeré";
     <link rel="stylesheet" href="/cha_hrd_stylesheet.css">
     <title>Retrieved Form Data</title>
     <style>
-  @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Noto+Sans&family=Pinyon+Script&display=swap');
-  body {
-    font-family: "Noto Sans", sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-  }
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Noto+Sans&family=Pinyon+Script&display=swap');
+        body {
+            font-family: "Noto Sans", sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+        }
 
         .contaier {
             place-items: center;
@@ -42,6 +42,7 @@ $database="champeré";
             background-color: rgba(85, 45, 54, 0.597);
             box-shadow: 0 10px 30px rgba(49, 6, 15, 0.2);
         }
+        
         h2{
             color:#333;
         }
@@ -84,73 +85,72 @@ $database="champeré";
             color:#FDCD93;
         }
         .navbar-color{
-    background-color: #500113;
-    margin: 0px;
-}
+            background-color: #500113;
+            margin: 0px;
+        }
 
-p, h2{
-    padding-left: 60px;
-}
-.navbar {
-    position: sticky;
-    height: 40px;
-    background-clip: border-box;
-    width: 90%;
-    margin: auto;
-    padding: 20px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+        p, h2{
+            padding-left: 60px;
+        }
+        .navbar {
+            position: sticky;
+            height: 40px;
+            background-clip: border-box;
+            width: 90%;
+            margin: auto;
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-.navbar img {
-    height: 50px;
-}
+        .navbar img {
+            height: 50px;
+        }
 
-.navbar ul li {
-    list-style: none;
-    display: inline-block;
-    margin: 0 20px;
-    position: relative;
-}
+        .navbar ul li {
+            list-style: none;
+            display: inline-block;
+            margin: 0 20px;
+            position: relative;
+        }
 
-.navbar ul li a {
-    text-decoration: none;
-    font-size: 13px;
-    color: #FDCD93;
-    text-transform: uppercase;
-}
-#login {
-    display: block;
-    width: 60px;
-    padding: 10px 20px;
-    color: #FDCD93;
-    background-color: #79472E;
-    text-align: center;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    font-size: 12px;
-}
-.form-container{
-    margin-top: 20px;
-    max-width: 50%;
-    margin: 0 auto;
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #3e000f;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-#white {
-    color: #FDCD93;
-}
-h2{
-    text-align: center;
-    font-size: 40px;
-    padding: 0px;
-    color:#FDCD93;
-}
+        .navbar ul li a {
+            text-decoration: none;
+            font-size: 13px;
+            color: #FDCD93;
+            text-transform: uppercase;
+        }
+        #login {
+            display: block;
+            width: 60px;
+            padding: 10px 20px;
+            color: #FDCD93;
+            background-color: #79472E;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            font-size: 12px;
+        }
+        .form-container{
+            margin-top: 20px;
+            max-width: 50%;
+            margin: 20px auto 10px;
+            padding: 20px;
+            background-color: #3e000f;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        #white {
+            color: #FDCD93;
+        }
+        h2{
+            text-align: center;
+            font-size: 40px;
+            padding: 0px;
+            color:#FDCD93;
+        }
 
         </style>
 </head>
