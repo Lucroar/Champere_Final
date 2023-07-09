@@ -1,5 +1,4 @@
 <?php
-
 $servername = "127.0.0.1"; // Replace with the actual MySQL server address
 $username = "root"; // Replace with your MySQL username
 $password = ""; // Replace with your MySQL password
@@ -24,30 +23,26 @@ $result = $conn->query($sql);
 <head>
   <title>Retrieved Form Data</title>
   <style>
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Noto+Sans&family=Pinyon+Script&display=swap');
-body {
-    background-color: #fbefda;
-    margin: 0%;
-    margin-bottom: 10px;
-    background-color: white;
-    background-size: cover;
-    font-family: "Noto Sans", 'Times New Roman', sans-serif;
-}
+    /* Custom styling for the retrieved form data */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
 
     h2 {
       color: #333;
-      margin: 10px;
     }
 
-    .form-data {
-      background-color: #f5f5f5;
-      margin: 20px;
-      padding: 10px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      
-    }
+    .form-data{
+        margin-top: 20px;
+        max-width: 50%;
+        margin: 20px auto 10px;
+        padding: 20px;
+        background-color: #3e000f;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        color: #FDCD93;
+      }
 
     .form-data p {
       margin: 0;
@@ -59,92 +54,27 @@ body {
       border-top: 1px solid #ccc;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #4b4603;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
+    .btn { 
+        padding: 10px 20px;
+        background-color: #693b24;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        margin: 15px;
     }
-
+    h2{
+        text-align: center;
+        font-size: 40px;
+        padding: 0px;
+        color:#FDCD93;
+      }
     .btn:hover {
-      background-color: #9e6003;
+      background-color: #bf6541;
     }
-    .navbar-color{
-    background-color: #500113;
-    margin: 0px;
-
-}
-.navbar {
-    position: sticky;
-    height: 40px;
-    background-clip: border-box;
-    width: 90%;
-    margin: auto;
-    padding: 20px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.navbar img {
-    height: 50px;
-}
-
-.navbar ul li {
-    list-style: none;
-    display: inline-block;
-    margin: 0 20px;
-    position: relative;
-}
-
-.navbar ul li a {
-    text-decoration: none;
-    font-size: 13px;
-    color: #FDCD93;
-    text-transform: uppercase;
-}
-
-.title {
-    font-family: "Pinyon Script";
-    text-align: center;
-    font-size: 40px;
-    padding: 0px;
-    color:#FDCD93;  
-}
-#login {
-    display: block;
-    width: 60px;
-    padding: 10px 20px;
-    color: #FDCD93;
-    background-color: #79472E;
-    text-align: center;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    font-size: 12px;
-}
-.form-container{
-    margin-top: 20px;
-    max-width: 50%;
-    margin: 0 auto;
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #3e000f;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-#white {
-    color: #FDCD93;
-}
-h2{
-    text-align: center;
-    font-size: 40px;
-    padding: 0px;
-    color:#FDCD93;
-}
+    .container {
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
@@ -163,12 +93,13 @@ h2{
     </div>
     </div>
     <div class="form-container" id="white">
+  <div class="form-data" id="white">
   <h2>Retrieved Form Data</h2>
-  
+  </div>
   <?php
   if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-      echo '<div class="form-container" id="white">';
+      echo "<div class='form-data'>";
       echo "<p><strong>Supplier Name:</strong> " . $row["SupplierName"] . "</p>";
       echo "<p><strong>Address:</strong> " . $row["Address"] . "</p>";
       echo "<p><strong>Contact Information:</strong> " . $row["ContactInformation"] . "</p>";
@@ -182,25 +113,45 @@ h2{
       echo "<p><strong>Terms of Payment:</strong> " . $row["TermsOfPayment"] . "</p>";
       echo "<p><strong>Ordered By:</strong> " . $row["OrderedBy"] . "</p>";
       echo "<p><strong>Order Date:</strong> " . $row["OrderDate"] . "</p>";
+      echo "<div class='container'><a href='cha_scm_results.php?id=". $row['id'] ."' class='btn' onclick='deleteData(". $row['id'] .")'>Delete</a>";
       echo "</div>";
+      echo "</div>";
+
     }
   } else {
+    echo '<div class="form-data" id="white">';
     echo "<p>No form data found.</p>";
+    echo "</div>";
   }
 
+  //Get this (make sure to change the table name)
+        if(isset($_GET['id'])){
+            $id = $_GET['id'];
+            
+            $delete = mysqli_query($conn, "DELETE FROM hlv WHERE id='$id' ");
+            if($delete) {
+                echo '<div class="form-data" id="white">';
+              echo "Data deleted successfully.";
+              echo '</div>';
+              echo '<script>window.location.href = "cha_scm_results.php";</script>';
+            } else {
+              echo "Error deleting data: " . mysqli_error($conn);
+            }
+          }   
   // Close the connection
   $conn->close();
-  
-  ?> 
-    </div>
-    <script>
-        // log out
-        function logOut(){
-        if (confirm("Do you want to Logout?") == true) {
-        window.location.href="../cha_sys_employee_login.html";
-        } else {    
-        }
-    }
-    </script>
+  ?>
+  <script> 
+      //Get this
+      function deleteData(id) {
+                if (confirm("Do you want to delete this entry?") == true) {
+                    window.location.href = "cha_scm_results.php?id=" + id;
+                } else {
+                }
+              }
+  </script>        
+  <div class="form-data">
+  <a href="cha_scm_view_inbound.html" class="btn">New Entry</a>
+  </div>
 </body>
 </html>

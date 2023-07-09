@@ -172,7 +172,7 @@ $database="champeré";
     <div class="form-container" id="white">
     <h2> Retrieved Form Data</h2>
 </div>
-    <?php
+<?php
     if ($result ->num_rows > 0){
         while($row= $result->fetch_assoc()){
             echo '<div class="form-container" id="white">';
@@ -201,14 +201,51 @@ $database="champeré";
             echo "<p> <strong> tax id no: </strong>" . $row["taxid"] . "</p>";
             echo "<p> <strong> UMID no: </strong>" . $row["UMID"] . "</p>";
             echo "<p> <strong> PHILSYS: </strong>" . $row["PHILSYS"] . "</p>";
+            echo "<div class='container'><a href='cha_hrd_viewemployee.php?id=". $row['id'] ."' class='btn' onclick='deleteData(". $row['id'] .")'>Delete</a>";
+            echo '</div>';
             echo "</div>";
         }
-
-    } else{
-    echo "<p> No form data found. </p>";
+            } else {
+            echo '<div class="form-container" id="white">';
+            echo "<p>No form data submitted.</p>";
+            echo "</div>";
+            }
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
+        
+        $delete = mysqli_query($conn, "DELETE FROM employeeinfo WHERE id='$id' ");
+        if($delete) {
+    echo '<div class="form-container" id="white">';
+    echo "Data deleted successfully.";
+    echo '</div>';
+    echo '<script>window.location.href = "cha_hrd_viewemployee.php";</script>';
+    } else {
+    echo "Error deleting data: " . mysqli_error($conn);
+        }
     }
     $conn -> close();
     ?>
+    <div class="form-container">
+    <a href="cha_hrd_editemployee.html" class="btn">New Entry</a>
+ 
+    </div>
+    <script>
+        // log out
+        function logOut(){
+        if (confirm("Do you want to Logout?") == true) {
+        window.location.href="../cha_sys_employee_login.html";
+        } else {    
+        }
+    }
+
+        //Get this
+          function deleteData(id) {
+        if (confirm("Do you want to delete this entry?") == true) {
+            window.location.href = "cha_hrd_results.php?id=" + id;
+        } else {
+        }
+    }
+    </script>
     </div>
 </body> 
 </html>
