@@ -1,5 +1,5 @@
 CREATE TABLE marketing (
-    id INT AUTO_INCREMENT,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     fname VARCHAR(50) NOT NULL,
     age INT NOT NULL,
     bdate INT NOT NULL,

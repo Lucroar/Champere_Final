@@ -1,8 +1,8 @@
 <?php
 $servername = "127.0.0.1";
 $username = "root";
-$password = "";
-$database = "marketing_data";
+$password = '';
+$database = "champeré";
 
 $conn = new mysqli($servername, $username, $password, $database);
 
@@ -10,7 +10,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT fname, age, bdate, created_at FROM marketing";
+$sql = "SELECT * FROM marketing";
 $result = $conn->query($sql);
 ?>
 <!DOCTYPE html>
@@ -236,27 +236,25 @@ $result = $conn->query($sql);
         <div class="navbar">
             <p class="title">Champeré</p>
             <ul>
-                <li><a href="cha_pyr_viewpyrdata.php">Payroll</a></li>
+                <li><a href="cha_mkt_inputdata.html">Marketing</a></li>
                 <li><a id="login" onclick="logOut()">Log Out</a></li>
             </ul>
         </div>
         </div>
         <div class="form-container" id="white">
         <h2>Marketing Data Entries</h2>
+        <p><strong>Other important datas that has been submitted would not be displayed for the employees privacy.</strong></p>
+        </div>
         <br><br>
         <?php
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo "<p><strong>Other important datas that has been submitted would not be displayed for the employees privacy.</strong></p>";
-                echo "<div class='form-data'>";
+                echo "<div class='form-container' id='white'>";
                 echo "<p><strong>Full Name:</strong>" . $row['fname'] . "</p>";
                 echo "<p><strong>Telephone No:</strong>" . $row['telno'] . "</p>";
                 echo "<p><strong>Cellphone No:</strong>" . $row['celno'] . "</p>";
                 echo "<p><strong>Email:</strong>" . $row['email'] . "</p>";
                 echo "<p><strong>Company Name:</strong>" . $row['cname'] . "</p>";
-                echo "</div>";
-                echo "<hr>";
-                //Get this
                 echo "<div class='container'><a href='cha_mkt_viewmktdata.php?id=". $row['id'] ."' class='btn' onclick='deleteData(". $row['id'] .")'>Delete</a>";
                 echo "</div>";
                 echo "</div>";

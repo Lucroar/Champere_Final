@@ -23,11 +23,71 @@ $result = $conn->query($sql);
 <head>
   <title>Retrieved Form Data</title>
   <style>
-    /* Custom styling for the retrieved form data */
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Noto+Sans&family=Pinyon+Script&display=swap');
     body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
+        background-color: #fbefda;
+        margin: 0%;
+        margin-bottom: 10px;
+        background-size: cover;
+        font-family: "Noto Sans", 'Times New Roman', sans-serif;
     }
+
+    .navbar-color{
+        background-color: #500113;
+        margin: 0px;
+
+    }
+    .navbar {
+        position: sticky;
+        height: 40px;
+        background-clip: border-box;
+        width: 90%;
+        margin: auto;
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navbar img {
+        height: 50px;
+    }
+
+    .navbar ul li {
+        list-style: none;
+        display: inline-block;
+        margin: 0 20px;
+        position: relative;
+    }
+
+    .navbar ul li a {
+        text-decoration: none;
+        font-size: 13px;
+        color: #FDCD93;
+        text-transform: uppercase;
+    }
+
+    .title {
+        font-family: "Pinyon Script";
+        text-align: center;
+        font-size: 40px;
+        padding: 0px;
+        color:#FDCD93;  
+    }
+
+    #login {
+        display: block;
+        width: 60px;
+        padding: 10px 20px;
+        color: #FDCD93;
+        background-color: #79472E;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+        font-size: 12px;
+    }
+
 
     h2 {
       color: #333;
@@ -75,18 +135,18 @@ $result = $conn->query($sql);
     .container {
       margin-top: 20px;
     }
-  </style>
+  </style>  
 </head>
 <body>
 <div class="navbar-color">
     <div class="navbar">
         <p class="title">Champeré</p>
         <ul>
-            <li><a href="/cha_sys_admin_aboutUs.html">Accountancy</a></li>
+            <li><a href="cha_sys_view_acc.php">Accountancy</a></li>
             <li><a href="cha_sys_view_viewemployee.php">Human Resource</a></li>
             <li><a href="/cha_sys_admin_faqs.html">Marketing</a></li>
-            <li><a href="cha_sys_pr-results.php">Payroll</a></li>
-            <li><a href="cha_sys_results.php">SCM (Inbound)</a></li>
+            <li><a href="cha_sys_viewpyrdata.php">Payroll</a></li>
+            <li><a href="cha_sys_inbound_results.php">SCM (Inbound)</a></li>
             <li><a href="cha_sys_outbound_results.php">SCM (Outbound)</a></li>
             <li><a id="login" onclick="logOut()">Log Out</a></li>
         </ul>
@@ -149,9 +209,6 @@ $result = $conn->query($sql);
                 } else {
                 }
               }
-  </script>        
-  <div class="form-data">
-  <a href="cha_scm_view_inbound.html" class="btn">New Entry</a>
-  </div>
+  </script> 
 </body>
 </html>

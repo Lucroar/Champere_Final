@@ -27,7 +27,7 @@ $database="champeré";
         @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Noto+Sans&family=Pinyon+Script&display=swap');
         body {
             font-family: "Noto Sans", sans-serif;
-            background-color: #f5f5f5;
+            background-color: #fbefda;
             margin: 0;
         }
 
@@ -159,11 +159,11 @@ $database="champeré";
     <div class="navbar">
         <p class="title">Champeré</p>
         <ul>
-            <li><a href="/cha_sys_admin_aboutUs.html">Accountancy</a></li>
+            <li><a href="cha_sys_view_acc.php">Accountancy</a></li>
             <li><a href="cha_sys_view_viewemployee.php">Human Resource</a></li>
             <li><a href="/cha_sys_admin_faqs.html">Marketing</a></li>
-            <li><a href="cha_sys_pr-results.php">Payroll</a></li>
-            <li><a href="cha_sys_results.php">SCM (Inbound)</a></li>
+            <li><a href="cha_sys_viewpyrdata.php">Payroll</a></li>
+            <li><a href="cha_sys_inbound_results.php">SCM (Inbound)</a></li>
             <li><a href="cha_sys_outbound_results.php">SCM (Outbound)</a></li>
             <li><a id="login" onclick="logOut()">Log Out</a></li>
         </ul>
@@ -225,10 +225,6 @@ $database="champeré";
     }
     $conn -> close();
     ?>
-    <div class="form-container">
-    <a href="cha_hrd_editemployee.html" class="btn">New Entry</a>
- 
-    </div>
     <script>
         // log out
         function logOut(){

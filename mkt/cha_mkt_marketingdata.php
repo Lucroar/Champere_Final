@@ -1,8 +1,8 @@
 <?php
 $servername = "127.0.0.1";
 $username = "root";
-$password = "";
-$database = "marketing_data";
+$password = '';
+$database = "champeré";
 
 $conn = new mysqli($servername, $username, $password, $database);
 
@@ -22,7 +22,7 @@ $cname = $_POST['cname'];
 $etype = $_POST['etype'];
 $ctype = $_POST['ctype'];
 
-$sql = "INSERT INTO marketing (fname, age, bdate, gender, cstatus, telno, celno, email, cname, etype, ctype ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO marketing(fname, age, bdate, gender, cstatus, telno, celno, email, cname, etype, ctype ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("sssssssssss", $fname, $age, $bdate, $gender, $cstatus, $telno, $celno, $email, $cname, $etype, $ctype);
 
