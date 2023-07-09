@@ -63,7 +63,7 @@ $reqdate = $_POST['reqdate'];
 $status = $_POST['status'];
   
 	    
-			    
+echo '<div class="form-container text-box">';		    
 		echo "<table border='1'>
 		      <th colspan='2'> Outbound Transaction </th>" ;
 		
@@ -102,7 +102,7 @@ $status = $_POST['status'];
             <br>
             
             <div class='container-two'>" ;
-          
+            echo '</div>';      
           include 'cha_scm_outbound_data.php';
           
 		} 

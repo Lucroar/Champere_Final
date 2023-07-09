@@ -34,13 +34,16 @@ $result = $conn->query($sql);
       color: #333;
     }
 
-    .form-data {
-      background-color: #f5f5f5;
-      padding: 10px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
+    .form-data{
+        margin-top: 20px;
+        max-width: 50%;
+        margin: 20px auto 10px;
+        padding: 20px;
+        background-color: #3e000f;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        color: #FDCD93;
+      }
 
     .form-data p {
       margin: 0;
@@ -52,18 +55,23 @@ $result = $conn->query($sql);
       border-top: 1px solid #ccc;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #4b4603;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
+    .btn { 
+        padding: 10px 20px;
+        background-color: #693b24;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        margin: 10px;
     }
-
+    h2{
+        text-align: center;
+        font-size: 40px;
+        padding: 0px;
+        color:#FDCD93;
+      }
     .btn:hover {
-      background-color: #9e6003;
+      background-color: #bf6541;
     }
   </style>
 </head>
