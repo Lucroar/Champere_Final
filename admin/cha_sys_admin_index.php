@@ -143,7 +143,7 @@ $result = $conn->query($sql);
     <div class="navbar">
         <p class="title">Champeré</p>
         <ul>
-            <li><a href="cha_sys_admin_index.php">Admin</a></li>
+            <li><a href="./cha_sys_admin_index.php">Admin</a></li>
             <li><a href="cha_sys_view_acc.php">Accountancy</a></li>
             <li><a href="cha_sys_view_viewemployee.php">Human Resource</a></li>
             <li><a href="cha_sys_viewmktdata.php">Marketing</a></li>

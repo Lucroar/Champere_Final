@@ -130,7 +130,7 @@ $database="champeré";
             margin: 0 auto;
             margin-top: 20px;
             padding: 20px;
-            background-color: #3e000f;
+            background-color:#500113;
             border-radius: 10px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
@@ -154,7 +154,7 @@ $database="champeré";
     }
 
     .btn:hover {
-        background-color: #974f33;
+        background-color:  #3e000f;
     }
 
         </style>

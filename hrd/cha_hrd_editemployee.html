@@ -2,9 +2,152 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="cha_hrd_stylesheet.css">
+	<link rel="stylesheet" href="./cha_hrd_stylesheet.css">
     <title>Employee Data</title>
 	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Noto+Sans&family=Pinyon+Script&display=swap');
+	body {
+		background-color: #fbefda;
+		margin: 0%;
+		margin-bottom: 10px;
+		background-color: white;
+		background-size: cover;
+		font-family: "Noto Sans", 'Times New Roman', sans-serif;
+	}
+
+	.container{
+		max-width: 500px;
+		margin: 0 auto;
+		margin-top: 10px;
+		margin-bottom: 20px;
+		padding: 20px;
+		padding-bottom: 10px;
+		background-color: #500113;
+		border-radius: 10px;
+		box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+	}
+
+	.form-title{
+		margin-top: 0;
+		margin-bottom: 20px;
+		font-size: 24px;
+		font-weight: bold;
+		color: rgb(255, 255, 255);
+	}
+
+	.form-label {
+		display: block;
+		margin-bottom: 10px;
+		font-weight: bold;
+		font-size: 19px;
+		color: #fff;
+	}
+
+	input:focus ,textarea:focus{
+		background-color: #FDCD93;
+		accent-color: #FDCD93;
+	}
+
+	input[type=radio]{
+		accent-color: #FDCD93;
+	}
+	input[type=submit]:hover{
+		background-color: #FDCD93;
+	}
+
+	.form-label {
+		display: block;
+		margin-bottom: 10px;
+		font-weight: bold;
+		font-size: 19px;
+		color: #fff;
+	}
+
+	.form-input {
+		width: 95%;
+		padding: 10px;
+		margin-bottom: 20px;
+		border: none;
+		border-radius: 5px;
+		background-color: #f2f2f2;
+	}
+
+	h1 {
+		color: white;
+	}
+
+	input[type=submit]:hover{
+		background-color: #FDCD93;
+	}
+
+	.navbar {
+		position: sticky;
+		height: 40px;
+		background-clip: border-box;
+		width: 90%;
+		margin: auto;
+		padding: 20px 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background-color: #500113;
+	}
+
+	.navbar img {
+		height: 50px;
+	}
+
+	.navbar ul li {
+		list-style: none;
+		display: inline-block;
+		margin: 0 20px;
+		position: relative;
+	}
+
+	.navbar ul li a {
+		text-decoration: none;
+		font-size: 13px;
+		color: #FDCD93;
+		text-transform: uppercase;
+	}
+
+	.title {
+		font-family: "Pinyon Script";
+		text-align: center;
+		font-size: 40px;
+		padding: 0px;
+		color:#FDCD93;  
+	}
+	#login {
+		display: block;
+		width: 60px;
+		padding: 10px 20px;
+		color: #FDCD93;
+		background-color: #79472E;
+		text-align: center;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: background-color 0.2s ease-in-out;
+		font-size: 12px;
+	}
+	.form-container{
+		margin-top: 20px;
+		max-width: 50%;
+		margin: 0 auto;
+		margin-top: 20px;
+		padding: 20px;
+		border-radius: 10px;
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+	}
+	#white {
+		color: #FDCD93;
+	}
+	h2{
+		text-align: center;
+		font-size: 40px;
+		padding: 0px;
+		color:#FDCD93;
+	}
 		#login {
     display: block;
     width: 60px;
@@ -18,7 +161,7 @@
     font-size: 12px;
 	}
 	.navbar-color {
-		background-color: #3e000f;
+		background-color: #500113;
 	}
 	</style>
 </head>
@@ -161,7 +304,7 @@
 		// log out
         function logOut(){
         if (confirm("Do you want to Logout?") == true) {
-        window.location.href="/cha_sys_employee_login.html";
+        window.location.href="../cha_sys_employee_login.html";
         } else {    
         }
     }
