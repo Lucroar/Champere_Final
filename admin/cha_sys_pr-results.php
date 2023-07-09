@@ -24,6 +24,9 @@ body {
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
+#white {
+    color: #FDCD93;
+}
 
 .form-header {
     display: block;
@@ -121,10 +124,6 @@ tr:hover {background-color: rgb(233, 238, 81);}
     text-align: right;
 }
 
-#white {
-    color: #FDCD93;
-}
-
 .slogan2 {
     background-image: url(winelog2.png);
      width: 100%; 
@@ -219,17 +218,21 @@ h2{
 </head>
 <body>
 <div class="navbar-color">
-        <div class="navbar">
-            <p class="title">Champeré</p>
-            <ul>
-                <li><a href="cha_pyr_viewpyrdata.php">Payroll</a></li>
-                <li><a id="login" onclick="logOut()">Log Out</a></li>
-            </ul>
-        </div>
-        </div>
+    <div class="navbar">
+        <p class="title">Champeré</p>
+        <ul>
+            <li><a href="/cha_sys_admin_aboutUs.html">Accountancy</a></li>
+            <li><a href="cha_sys_view_viewemployee.php">Human Resource</a></li>
+            <li><a href="/cha_sys_admin_faqs.html">Marketing</a></li>
+            <li><a href="cha_sys_pr-results.php">Payroll</a></li>
+            <li><a href="cha_sys_results.php">SCM (Inbound)</a></li>
+            <li><a href="cha_sys_outbound_results.php">SCM (Outbound)</a></li>
+            <li><a id="login" onclick="logOut()">Log Out</a></li>
+        </ul>
+    </div>
+    </div>
     <div class="form-container" id="white">
     <h2>Payroll Data Submission Result</h2>
-        <br><br>
         <?php
         if (isset($_POST['ename']) && isset($_POST['enumber']) && isset($_POST['cposition']) 
         && isset($_POST['edate']) && isset($_POST['email']) && isset($_POST['cnum']) 
@@ -288,10 +291,6 @@ h2{
             echo "<p>No form data submitted.</p>";
         }
         ?>
-
-        
-        <a href="cha_pyr_inputdata.html" class="btn">Go Back</a>
-        <a href="cha_pyr_viewpyrdata.php" class="btn">View Entries</a>
     </div>
     <script>
         // log out

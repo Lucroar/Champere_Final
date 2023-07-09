@@ -5,11 +5,6 @@
   <title>Warehouse Inventory</title>
   <style>
     /* Reset default styles for buttons */
-    button {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
 
     body {
       font-family: Arial, sans-serif;
@@ -59,7 +54,6 @@
 
     button {
       display: block;
-      width: 30%;
       padding: 12px;
       background-color: #79472E;
       color: white;
@@ -71,7 +65,7 @@
     }
 
     button:hover {
-      background-color: #9e6003;
+      background-color: #FDCD93;
     }
 
     table {
@@ -110,7 +104,7 @@
     }
 
     .buttons-box {
-      background-color: #918d8d;
+      background-color: #500113;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       padding: 15px;
@@ -137,7 +131,7 @@
     }
 
     .buttons-box button:hover {
-      background-color: #9e6003;
+      background-color: #FDCD93;
     }
 
     #inventory-table {
@@ -267,6 +261,7 @@
                 <td>${item.OutCount}</td>
                 <td>${item.CurrentStocks}</td>
                 <td>${item.Price}</td>
+                <td><button onclick="removeItem(this)">Remove</button></td>
               `;
               inventoryTable.appendChild(row);
             });
@@ -278,7 +273,18 @@
         })
         .catch(error => console.error('Error:', error));
     }
-    
+
+    // Remove an item from the inventory table
+    function removeItem(button) {
+      const row = button.parentNode.parentNode;
+      const productName = row.querySelector('td').textContent;
+      row.parentNode.removeChild(row);
+      document.getElementById('product_name').value = '';
+      document.getElementById('in_count').value = '';
+      document.getElementById('out_count').value = '';
+      document.getElementById('current_stocks').value = '';
+      document.getElementById('price').value = '';
+    }
 
     // Fetch inventory data initially
     fetchInventory();
@@ -302,14 +308,12 @@
 
     // log out
     function logOut(){
-    if (confirm("Do you want to Log out?") == true) {
-    window.location.href="/cha_sys_employee_login.html";
-    } else {    
+      if (confirm("Do you want to Log out?") == true) {
+        window.location.href="/cha_sys_employee_login.html";
+      } else {    
+      }
     }
-}
-
-
-  </script>
+</script>
 
 
 

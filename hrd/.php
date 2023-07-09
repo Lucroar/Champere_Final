@@ -24,12 +24,16 @@ $database="champeré";
     <link rel="stylesheet" href="/cha_hrd_stylesheet.css">
     <title>Retrieved Form Data</title>
     <style>
-  @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Noto+Sans&family=Pinyon+Script&display=swap');
-  body {
-    font-family: "Noto Sans", sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Noto+Sans&family=Pinyon+Script&display=swap');
+body {
+    background-color: #fbefda;
+    margin: 0%;
+    margin-bottom: 10px;
+    background-color: white;
+    background-size: cover;
+    font-family: "Noto Sans", 'Times New Roman', sans-serif;
+}
+
 
         .contaier {
             place-items: center;
@@ -53,6 +57,7 @@ $database="champeré";
             border: 1px solid #ccc;
             border-radius: 4px;
         }
+        
         .form-data p{
             margin:0px;
         }
@@ -120,6 +125,14 @@ p, h2{
     color: #FDCD93;
     text-transform: uppercase;
 }
+
+.title {
+    font-family: "Pinyon Script";
+    text-align: center;
+    font-size: 40px;
+    padding: 0px;
+    color:#FDCD93;  
+}
 #login {
     display: block;
     width: 60px;
@@ -152,6 +165,7 @@ h2{
     color:#FDCD93;
 }
 
+
         </style>
 </head>
 <body>
@@ -169,13 +183,10 @@ h2{
         </ul>
     </div>
     </div>
-    <div class="form-container" id="white">
     <h2> Retrieved Form Data</h2>
-</div>
     <?php
     if ($result ->num_rows > 0){
         while($row= $result->fetch_assoc()){
-            echo '<div class="form-container" id="white">';
             echo "<p> <strong> Firstname: </strong>" . $row["Firstname"] . "</p>";
             echo "<p> <strong> address: </strong>" . $row["address"] . "</p>";
             echo "<p> <strong> Contactno: </strong>" . $row["Contactno"] . "</p>";
@@ -202,6 +213,7 @@ h2{
             echo "<p> <strong> UMID no: </strong>" . $row["UMID"] . "</p>";
             echo "<p> <strong> PHILSYS: </strong>" . $row["PHILSYS"] . "</p>";
             echo "</div>";
+            echo "<hr>";
         }
 
     } else{
@@ -209,6 +221,6 @@ h2{
     }
     $conn -> close();
     ?>
-    </div>
+        <a href="cha_hrd_editemployee.html" class="btn" style="margin: 20px;">New Entry</a>
 </body> 
 </html>

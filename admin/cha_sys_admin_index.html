@@ -8,23 +8,24 @@
 </head>
 <body>
     <div class="navbar-color">
-    <div class="navbar">
-        <p class="title">Champeré</p>
-        <ul>
-            <li><a href="/cha_sys_admin_aboutUs.html">Accountancy</a></li>
-            <li><a href="/admin/cha_sys_view_viewemployee.php">Human Resource</a></li>
-            <li><a href="/cha_sys_admin_faqs.html">Marketing</a></li>
-            <li><a href="/cha_sys_admin_faqs.html">Payroll</a></li>
-            <li><a href="cha_sys_admin_scmview.html">Supply Chain Management</a></li>
-            <li><a id="login" onclick="logOut()">Log Out</a></li>
-        </ul>
-    </div>
-    </div>
+        <div class="navbar">
+            <p class="title">Champeré</p>
+            <ul>
+                <li><a href="/cha_sys_admin_aboutUs.html">Accountancy</a></li>
+                <li><a href="cha_sys_view_viewemployee.php">Human Resource</a></li>
+                <li><a href="/cha_sys_admin_faqs.html">Marketing</a></li>
+                <li><a href="cha_sys_pr-results.php">Payroll</a></li>
+                <li><a href="cha_sys_results.php">SCM (Inbound)</a></li>
+                <li><a href="cha_sys_outbound_results.php">SCM (Outbound)</a></li>
+                <li><a id="login" onclick="logOut()">Log Out</a></li>
+            </ul>
+        </div>
+        </div>
     <script>
         // log out
         function logOut(){
         if (confirm("Do you want to Logout?") == true) {
-        window.location.href="/cha_sys_employee_login.html";
+        window.location.href="../cha_sys_employee_login.html";
         } else {    
         }
     }

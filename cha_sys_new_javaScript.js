@@ -5,7 +5,7 @@ function myFunction() {
   switch (link) {
     
     case "1": //Admin
-      document.getElementById("action_page").action = "/admin/cha_sys_admin_index.html";
+      document.getElementById("action_page").action = "./admin/cha_sys_admin_index.html";
       break;
     case "2": //Accountancy
       document.getElementById("action_page").action = "cha_sys_view_faqs.html";
@@ -17,13 +17,10 @@ function myFunction() {
       document.getElementById("action_page").action = "cha_sys_new_about-us.html";
       break;
     case "5": //Payroll
-      document.getElementById("action_page").action = "/payroll/cha_pyr_inputdata.html.html";
-      break;
-    case "6": //Payroll
       document.getElementById("action_page").action = "/payroll/cha_pyr_inputdata.html";
       break;
-    case "7": //Supply Chain Management
-      document.getElementById("action_page").action = "./scm/scm_warehouse_inventory.html";
+    case "6": //Supply Chain Management
+      document.getElementById("action_page").action = "/scm/scm_warehouse_inventory.html";
       break;
     default:
       document.getElementById("action_page").action = "";
@@ -41,6 +38,10 @@ let body = document.querySelector('body');
 let total = document.querySelector('.total');
 let quantity = document.querySelector('.quantity');
 
+buyShopping.addEventListener('click', () => {
+    alert("Thank you for your purchase!")
+    window.location.href = 'cha_sys_new_index.html';
+});
 
 openShopping.addEventListener('click', ()=>{
     body.classList.add('active');
