@@ -1,4 +1,4 @@
-function myFunction() {
+function employeeLogin() {
   
   var link = document.getElementById("framework").value;
   
@@ -40,7 +40,7 @@ let quantity = document.querySelector('.quantity');
 
 buyShopping.addEventListener('click', () => {
     alert("Thank you for your purchase!")
-    window.location.href = 'cha_sys_new_index.html';
+    window.location.href = 'cha_sys_view_shoppingCart.html';
 });
 
 openShopping.addEventListener('click', ()=>{
