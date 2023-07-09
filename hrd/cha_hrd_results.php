@@ -195,12 +195,12 @@ else {
     
     $delete = mysqli_query($conn, "DELETE FROM /*DELETE*/ employeeinfo WHERE id='$id' ");
     if($delete) {
-        echo '<div class="form-container" id="white">';
-      echo "Data deleted successfully.";
-      echo '</div>';
-      echo '<script>window.location.href = "cha_hrd_results.php";</script>';
-    } else {
-      echo "Error deleting data: " . mysqli_error($conn);
+  echo '<div class="form-container" id="white">';
+  echo "Data deleted successfully.";
+  echo '</div>';
+  echo '<script>window.location.href = "cha_hrd_results.php";</script>';
+  } else {
+  echo "Error deleting data: " . mysqli_error($conn);
     }
   }
 ?>
