@@ -212,6 +212,14 @@ $result = $conn->query($sql);
   ?>
   </script>
   <script>
+     // log out
+     function logOut(){
+        if (confirm("Do you want to Logout?") == true) {
+        window.location.href="../cha_sys_employee_login.html";
+        } else {    
+        }
+    }
+
         function deleteData(id) {
             if (confirm("Do you want to delete this entry?") == true) {
                 window.location.href = "cha_pyr_viewpyrdata.php?id=" + id;

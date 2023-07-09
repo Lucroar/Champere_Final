@@ -162,14 +162,17 @@ $result = $conn->query($sql);
   if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
       echo "<div class='form-data'>";
-      echo "<p><strong>Name:</strong> " . $row["firstName"].$row["middleName"].$row["lastName"] . "</p>";
-      echo "<p><strong>Email:</strong> " . $row["customerEmail"] . "</p>";
-      echo "<p><strong>Contact Information:</strong> " . $row["contactInfo"] . "</p>";
-      echo "<p><strong>Gender:</strong> " . $row["gender"] . "</p>";
-      echo "<p><strong>Birthdate:</strong> " . $row["birthdate"] . "</p>";
-      echo "<p><strong>Address:</strong> " . $row["address"] . "</p>";
-      echo "<div class='container'><a href='cha_sys_admin_index.php?id=". $row['id'] ."' class='btn' onclick='deleteData(". $row['id'] .")'>Delete</a>";
-      echo "</div>";
+        echo "<p><strong>Name:</strong> " . $row["firstName"]." ".$row["middleName"]." ".$row["lastName"] . "</p>";
+        echo "<p><strong>Email:</strong> " . $row["customerEmail"] . "</p>";
+        echo "<p><strong>Contact Information:</strong> " . $row["contactInfo"] . "</p>";
+        echo "<p><strong>Gender:</strong> " . $row["gender"] . "</p>";
+        echo "<p><strong>Birthdate:</strong> " . $row["birthdate"] . "</p>";
+        echo "<p><strong>Address:</strong> " . $row["address"] . "</p>";
+
+        echo "<div class='container'>
+          <a href='cha_sys_new_account-edit.php?id=". $row['id'] ."' class='btn'>Edit</a>
+          <a href='cha_sys_admin_index.php?id=". $row['id'] ."' class='btn' onclick='deleteData(". $row['id'] .")'>Delete</a>";
+        echo "</div>";
       echo "</div>";
 
     }
@@ -183,12 +186,12 @@ $result = $conn->query($sql);
         if(isset($_GET['id'])){
             $id = $_GET['id'];
             
-            $delete = mysqli_query($conn, "DELETE FROM hlv WHERE id='$id' ");
+            $delete = mysqli_query($conn, "DELETE FROM customerinfo WHERE id=$id ");
             if($delete) {
                 echo '<div class="form-data" id="white">';
               echo "Data deleted successfully.";
               echo '</div>';
-              echo '<script>window.location.href = "cha_scm_results.php";</script>';
+              echo '<script>window.location.href = "cha_sys_admin_index.php";</script>';
             } else {
               echo "Error deleting data: " . mysqli_error($conn);
             }
@@ -197,6 +200,14 @@ $result = $conn->query($sql);
   $conn->close();
   ?>
   <script> 
+    // log out
+    function logOut(){
+          if (confirm("Do you want to Logout?") == true) {
+          window.location.href="../cha_sys_employee_login.html";
+          } else {    
+          }
+      }
+
       //Get this
       function deleteData(id) {
                 if (confirm("Do you want to delete this entry?") == true) {
