@@ -39,7 +39,7 @@
         text-decoration: none;
         border-radius: 5px;
         margin-right: 10px;
-        background-color: ##79472E;
+        background-color: #79472E;
         }
         
         .btn:hover {
