@@ -138,7 +138,7 @@ $result = $conn->query($sql);
   $conn->close();
   
   ?>
-  
+  </script>
   <a href="cha_scm_view_outbound.html" class="btn">New Entry</a>
   </div>
 </body>
