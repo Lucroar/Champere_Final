@@ -63,6 +63,7 @@ $result = $conn->query($sql);
         border-radius: 4px;
         transition: background-color 0.3s ease;
         margin: 15px;
+        background-color: ##79472E;
     }
     h2{
         text-align: center;
