@@ -81,51 +81,37 @@ $result = $conn->query($sql);
   </div>
 
   <?php
+    if(isset($_GET['id'])){
+      $id = $_GET['id'];
+      
+      $delete = mysqli_query($conn, "DELETE FROM hlv1 WHERE id='$id' ");
+      if($delete) {
+        echo '<div class="form-container" id="white">';
+        echo "Data deleted successfully.";
+        echo '</div>';
+        echo '<script>window.location.href = "cha_scm_outbound_results.php";</script>';
+      } else {
+        echo "Error deleting data: " . mysqli_error($conn);
+      }
+    }
+    
   if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
       echo "<div class='form-data'>";
-      
       echo "<p><strong>Requested By:</strong> " . $row["RequestedBy"] . "</p>";
       echo "<p><strong>Item Name:</strong> " . $row["ItemName"] . "</p>";
       echo "<p><strong>Quantity:</strong> " . $row["Quantity"] . "</p>";
       echo "<p><strong>Item Recipient:</strong> " . $row["ItemRecipient"] . "</p>";
       echo "<p><strong>Request Date:</strong> " . $row["RequestDate"] . "</p>";
       echo "<p><strong>Status:</strong> " . $row["Status"] . "</p>";
-
+      echo "<div class='container'><a href='cha_scm_outbound_results.php?". $row['id'] ."' class='btn' onclick='deleteData(". $row['id'] .")'>Delete</a>";
       echo "</div>";
-
-      //Get this
-                echo "<div class='container'><a href='cha_scm_outbound_results.php?id=". $row['id'] ."' class='btn' onclick='deleteData(". $row['id'] .")'>Delete</a>";
-                echo "</div>";
-                echo "</div>";
+      echo "</div>";
     }
-  } else {
+  } else {  
     echo "<p>No form data found.</p>";
   }
-  
-   //Get this (make sure to change the table name)
-        if(isset($_GET['id'])){
-            $id = $_GET['id'];
-            
-            $delete = mysqli_query($conn, "DELETE FROM /*DELETE*/ hlv1 WHERE id='$id' ");
-            if($delete) {
-                echo '<div class="form-container" id="white">';
-              echo "Data deleted successfully.";
-              echo '</div>';
-              echo '<script>window.location.href = "cha_scm_outbound_results.php";</script>';
-            } else {
-              echo "Error deleting data: " . mysqli_error($conn);
-            }
-          }
-
-    //Get this
-        function deleteData(id) {
-            if (confirm("Do you want to delete this entry?") == true) {
-                window.location.href = "cha_pyr_viewpyrdata.php?id=" + id;
-            } else {
-            }
-        }
-
+    
   // Close the connection
   $conn->close();
   
@@ -133,5 +119,13 @@ $result = $conn->query($sql);
   <div class='form-data'>
   <a href="cha_scm_view_outbound.html" class="btn">New Entry</a>
   </div>
+  <script>
+        function deleteData(id) {
+            if (confirm("Do you want to delete this entry?") == true) {
+                window.location.href = "cha_pyr_viewpyrdata.php?id=" + id;
+            } else {
+            }
+        }
+    </script>
 </body>
 </html>
