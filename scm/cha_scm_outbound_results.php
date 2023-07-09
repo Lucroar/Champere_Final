@@ -129,14 +129,6 @@ $result = $conn->query($sql);
             }
           }
 
-    //Get this
-        function deleteData(id) {
-            if (confirm("Do you want to delete this entry?") == true) {
-                window.location.href = "cha_pyr_viewpyrdata.php?id=" + id;
-            } else {
-            }
-        }
-
   // Close the connection
   $conn->close();
   
