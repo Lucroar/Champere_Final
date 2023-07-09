@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marketing Data Form</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="cha_pyr_stylesheet.css">
+<Style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Noto+Sans&family=Pinyon+Script&display=swap');
+body {
+    background-color: #fbefda;
+    margin: 0%;
+    margin-bottom: 10px;
+    background-size: cover;
+    font-family: "Noto Sans", 'Times New Roman', sans-serif;
+}
+
+.form-container{
+    margin-top: 20px;
+    max-width: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #3e000f;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-header {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #FDCD93;
+}
+
+.form-input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+}
+
+.form-select {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.form-input:focus{
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgb(233, 238, 81);
+}
+
+.form-button {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #693b24;
+    columns: #fff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    font-size: 18px;
+}
+
+.form-button:hover {
+    background-color: #974f33;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 2px solid #894e32;
+}
+  
+tr:hover {background-color: rgb(233, 238, 81);}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #693b24;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #974f33;
+}
+
+.slogan1 {
+    background-image: url(winelog1.png); 
+    width: 100%; 
+    height: 600px; 
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+
+.slogan-text1 {
+    font-size: 25px; 
+    font-style: bold; 
+    padding: 6ch;
+    text-align: right;
+}
+
+#white {
+    color: #FDCD93;
+}
+
+.slogan2 {
+    background-image: url(winelog2.png);
+     width: 100%; 
+     height: 600px; 
+     background-size: cover; 
+     background-repeat: no-repeat;
+}
+
+.slogan-text2 {
+    font-size: 26px; 
+    color: #fbefda; 
+    font-style: bold; 
+    padding: 6ch;
+    text-align: right;
+}
+
+.textarea {
+    width: 60%;
+}
+
+h2{
+    text-align: center;
+    font-size: 40px;
+    padding: 0px;
+    color:#FDCD93;
+}
+
+#submit {
+    color: #FDCD93;
+    background-color: #79472E;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+.navbar-color{
+    background-color: #500113;
+    margin: 0px;
+
+}
+.navbar {
+    position: sticky;
+    height: 40px;
+    background-clip: border-box;
+    width: 90%;
+    margin: auto;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar img {
+    height: 50px;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    font-size: 13px;
+    color: #FDCD93;
+    text-transform: uppercase;
+}
+
+#login {
+        display: block;
+        width: 60px;
+        padding: 10px 20px;
+        color: #FDCD93;
+        background-color: #79472E;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+        font-size: 12px;
+    }
+    .title {
+    font-family: "Pinyon Script";
+    text-align: center;
+    font-size: 40px;
+    padding: 0px;
+    color:#FDCD93;  
+}
+    </Style>
+</head>
+<body>
+    <div class="navbar-color">
+        <div class="navbar">
+            <p class="title">Champeré</p>
+            <ul>
+                <li><a href="cha_pyr_viewpyrdata.php">Marketing</a></li>
+                <li><a id="login" onclick="logOut()">Log Out</a></li>
+            </ul>
+        </div>
+        </div>
+
+    <form action="cha_mkt_results.php" method="post" class="form-container">
+            <label for="fname" class="form-label">Full Name:</label>
+            <input type="text" class="form-input" id="fname" name="fname" placeholder="Surname, First Name, Middle Name" required><br><br>
+            
+            <label for="age" class="form-label">Age:</label>
+            <input type="text" class="form-input" id="age" name="age" placeholder="Enter your Age" required><br><br>
+            
+            <label for="bdate" class="form-label">Birthdate:</label>
+            <input type="date" class="form-input" id="bdate" name="bdate" required><br><br>
+
+            <label for="gender" class="form-label">Gender:</label><br>
+            <select name="gender" id="gender" class="form-select">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select><br><br>
+
+            <label for="cstatus" class="form-label">Civil Status:</label><br>
+            <select name="cstatus" id="cstatus" class="form-select">
+                <option value="Single">Single</option>
+                <option value="Married">Married</option>
+                <option value="Divorced">Divorced</option>
+                <option value="Widowed">Widowed</option>
+            </select><br><br>
+
+            <label for="telno" class="form-label">Telephone No:</label>
+            <input type="text" class="form-input" name="telno" id="telno" placeholder="Enter your Telephone No" required><br><br>
+
+            <label for="celno" class="form-label">Cellphone No:</label>
+            <input type="text" class="form-input" name="celno" id="celno" placeholder="Enter your Cellphone No" required><br><br>
+
+            <label for="email" class="form-label">Email:</label>
+            <input type="text" class="form-input" name="email" id="email" placeholder="Enter your Email" required><br><br>
+
+            <label for="cname" class="form-label">Company Name:</label>
+            <input type="text" class="form-input" id="cname" name="cname" required placeholder="Enter your Company Name:"><br><br>
+
+            <label for="etype" class="form-label">Entry Type:</label><br>
+            <select name="etype" id="etype" class="form-select">
+                <option value="Company">Company</option>
+                <option value="Individual">Individual</option>
+            </select><br><br>
+
+            <label for="ctype" class="form-label">Company Type:</label>
+            <input type="text" class="form-input" id="ctype" name="ctype" required><br><br>
+
+        <input type="submit" name="submit" value="Submit" class="form-button">
+    </form>
+    <div class="slogan2">
+        <div class="slogan-text2">
+            <a href="" id="white"></button>
+        </div>
+    </div>
+    <script>
+        // log out
+     function logOut(){
+     if (confirm("Do you want to Logout?") == true) {
+     window.location.href="/cha_sys_employee_login.html";
+     } else {    
+     }
+ }
+ </script>
+</body>
+</html>
