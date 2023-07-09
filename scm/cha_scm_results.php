@@ -127,14 +127,9 @@ $result = $conn->query($sql);
             }
           }
 
-
-
-          
   // Close the connection
   $conn->close();
-  
   ?>
-  
   <script> 
       //Get this
       function deleteData(id) {
