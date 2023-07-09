@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>Payroll Data Submission Result</title>
-    <link rel="stylesheet" type="text/css" href="/cha_pyr_stylesheet.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Noto+Sans&family=Pinyon+Script&display=swap');
         body {
