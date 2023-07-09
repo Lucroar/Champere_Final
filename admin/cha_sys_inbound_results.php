@@ -174,7 +174,9 @@ $result = $conn->query($sql);
       echo "<p><strong>Terms of Payment:</strong> " . $row["TermsOfPayment"] . "</p>";
       echo "<p><strong>Ordered By:</strong> " . $row["OrderedBy"] . "</p>";
       echo "<p><strong>Order Date:</strong> " . $row["OrderDate"] . "</p>";
-      echo "<div class='container'><a href='cha_scm_results.php?id=". $row['id'] ."' class='btn' onclick='deleteData(". $row['id'] .")'>Delete</a>";
+      echo "<div class='container'>
+      <a href='cha_sys_inbound-edit.php?id=". $row['id'] ."' class='btn'>Edit</a>
+      <a href='cha_scm_results.php?id=". $row['id'] ."' class='btn' onclick='deleteData(". $row['id'] .")'>Delete</a>";
       echo "</div>";
       echo "</div>";
 
@@ -203,6 +205,14 @@ $result = $conn->query($sql);
   $conn->close();
   ?>
   <script> 
+   // log out
+   function logOut(){
+        if (confirm("Do you want to Logout?") == true) {
+        window.location.href="../cha_sys_employee_login.html";
+        } else {    
+        }
+    }
+
       //Get this
       function deleteData(id) {
                 if (confirm("Do you want to delete this entry?") == true) {
