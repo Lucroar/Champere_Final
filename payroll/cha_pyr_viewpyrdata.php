@@ -264,7 +264,7 @@ $result = $conn->query($sql);
         if(isset($_GET['id'])){
             $id = $_GET['id'];
             
-            $delete = mysqli_query($conn, "DELETE FROM /*DELETE*/ payroll_data WHERE id='$id' ");
+            $delete = mysqli_query($conn, "DELETE FROM  payroll_data WHERE id='$id' ");
             if($delete) {
                 echo '<div class="form-container" id="white">';
               echo "Data deleted successfully.";
