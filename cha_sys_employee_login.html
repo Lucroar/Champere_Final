@@ -37,14 +37,14 @@
                     <input class="form-input" type="text" placeholder="Enter Name" name="name" required>
                     <label for="password">Password<br></label>
                     <input class="form-input" type="password" placeholder="Enter Password" name="password" required>
-                    <button class="form-button" onclick="myFunction()">Login</button>
+                    <button class="form-button" onclick="employeeLogin()">Login</button>
                     </form>
                 </div>
                 </div>
             </div>
         </center>
         <script>
-            function myFunction() {
+            function employeeLogin() {
   
   var link = document.getElementById("framework").value;
   
@@ -54,7 +54,7 @@
       document.getElementById("action_page").action = "/admin/cha_sys_admin_index.html";
       break;
     case "2": //Accountancy
-      document.getElementById("action_page").action = "cha_sys_view_faqs.html";
+      document.getElementById("action_page").action = "/act/cha_act_input.html";
       break;
     case "3": //Human Resource
       document.getElementById("action_page").action = "hrd/cha_hrd_editemployee.html";

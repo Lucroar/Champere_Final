@@ -93,10 +93,38 @@ $result = $conn->query($sql);
       echo "<p><strong>Status:</strong> " . $row["Status"] . "</p>";
 
       echo "</div>";
+
+      //Get this
+                echo "<div class='container'><a href='cha_scm_outbound_results.php?id=". $row['id'] ."' class='btn' onclick='deleteData(". $row['id'] .")'>Delete</a>";
+                echo "</div>";
+                echo "</div>";
     }
   } else {
     echo "<p>No form data found.</p>";
   }
+  
+   //Get this (make sure to change the table name)
+        if(isset($_GET['id'])){
+            $id = $_GET['id'];
+            
+            $delete = mysqli_query($conn, "DELETE FROM /*DELETE*/ hlv1 WHERE id='$id' ");
+            if($delete) {
+                echo '<div class="form-container" id="white">';
+              echo "Data deleted successfully.";
+              echo '</div>';
+              echo '<script>window.location.href = "cha_scm_outbound_results.php";</script>';
+            } else {
+              echo "Error deleting data: " . mysqli_error($conn);
+            }
+          }
+
+    //Get this
+        function deleteData(id) {
+            if (confirm("Do you want to delete this entry?") == true) {
+                window.location.href = "cha_pyr_viewpyrdata.php?id=" + id;
+            } else {
+            }
+        }
 
   // Close the connection
   $conn->close();
