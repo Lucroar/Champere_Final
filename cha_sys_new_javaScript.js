@@ -8,7 +8,7 @@ function myFunction() {
       document.getElementById("action_page").action = "./admin/cha_sys_admin_index.html";
       break;
     case "2": //Accountancy
-      document.getElementById("action_page").action = "cha_sys_view_faqs.html";
+      document.getElementById("action_page").action = "/act/cha_act_input.html";
       break;
     case "3": //Human Resource
       document.getElementById("action_page").action = "/hrd/cha_hrd_editemployee.html";
