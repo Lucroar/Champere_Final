@@ -92,7 +92,7 @@ $result = $conn->query($sql);
         echo '<div class="form-data" id="white">';
         echo "Data deleted successfully.";
         echo '</div>';
-        echo '<script>window.location.href = "cha_scm_outbound_results.php";</script>';
+        echo '<script>window.location.href = "./cha_scm_outbound_results.php";</script>';
       } else {
         echo "Error deleting data: " . mysqli_error($conn);
       }
@@ -107,7 +107,7 @@ $result = $conn->query($sql);
       echo "<p><strong>Item Recipient:</strong> " . $row["ItemRecipient"] . "</p>";
       echo "<p><strong>Request Date:</strong> " . $row["RequestDate"] . "</p>";
       echo "<p><strong>Status:</strong> " . $row["Status"] . "</p>";
-      echo "<div class='container'><a href='cha_scm_outbound_results.php?id=". $row['id'] ."' class='btn' onclick='deleteData(". $row['id'] .")'>Delete</a>";
+      echo "<div class='container'><a href='./cha_scm_outbound_results.php?id=". $row['id'] ."' class='btn' onclick='deleteData(". $row['id'] .")'>Delete</a>";
       echo "</div>";
       echo "</div>";
     }
@@ -126,7 +126,7 @@ $result = $conn->query($sql);
                 echo '<div class="form-container" id="white">';
               echo "Data deleted successfully.";
               echo '</div>';
-              echo '<script>window.location.href = "cha_scm_outbound_results.php";</script>';
+              echo '<script>window.location.href = "./cha_scm_outbound_results.php";</script>';
             } else {
               echo "Error deleting data: " . mysqli_error($conn);
             }
@@ -143,7 +143,7 @@ $result = $conn->query($sql);
   <script>
         function deleteData(id) {
             if (confirm("Do you want to delete this entry?") == true) {
-                window.location.href = "cha_pyr_viewpyrdata.php?id=" + id;
+                window.location.href = "./cha_pyr_viewpyrdata.php?id=" + id;
             } else {
             }
         }

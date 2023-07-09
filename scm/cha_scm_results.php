@@ -100,7 +100,7 @@ $result = $conn->query($sql);
       echo "<p><strong>Terms of Payment:</strong> " . $row["TermsOfPayment"] . "</p>";
       echo "<p><strong>Ordered By:</strong> " . $row["OrderedBy"] . "</p>";
       echo "<p><strong>Order Date:</strong> " . $row["OrderDate"] . "</p>";
-      echo "<div class='container'><a href='cha_scm_results.php?id=". $row['id'] ."' class='btn' onclick='deleteData(". $row['id'] .")'>Delete</a>";
+      echo "<div class='container'><a href='./cha_scm_results.php?id=". $row['id'] ."' class='btn' onclick='deleteData(". $row['id'] .")'>Delete</a>";
       echo "</div>";
       echo "</div>";
 
@@ -120,7 +120,7 @@ $result = $conn->query($sql);
                 echo '<div class="form-data" id="white">';
               echo "Data deleted successfully.";
               echo '</div>';
-              echo '<script>window.location.href = "cha_scm_results.php";</script>';
+              echo '<script>window.location.href = "./cha_scm_results.php";</script>';
             } else {
               echo "Error deleting data: " . mysqli_error($conn);
             }
@@ -136,13 +136,13 @@ $result = $conn->query($sql);
       //Get this
       function deleteData(id) {
                 if (confirm("Do you want to delete this entry?") == true) {
-                    window.location.href = "cha_scm_results.php?id=" + id;
+                    window.location.href = "./cha_scm_results.php?id=" + id;
                 } else {
                 }
               }
   </script>        
   <div class="form-data">
-  <a href="cha_scm_view_inbound.html" class="btn">New Entry</a>
+  <a href="./cha_scm_view_inbound.html" class="btn">New Entry</a>
   </div>
 </body>
 </html>

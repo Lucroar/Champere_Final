@@ -29,7 +29,7 @@ if (!empty($productName)) {
     if ($stmt->execute()) {
         $message = 'Item added successfully.';
         // Redirect to scm_warehouse_inventory.html with success message as URL parameter
-        header("Location: scm_warehouse_inventory.html?message=" . urlencode($message));
+        header("Location:./scm_warehouse_inventory.html?message=" . urlencode($message));
         exit();
     } else {
         echo '<p class="error-message">Error: ' . $stmt->error . '</p>';

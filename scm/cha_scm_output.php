@@ -164,8 +164,8 @@ $orderdate = $_POST['orderdate'];
         </div>
         
         <div class="container-three">
-          <a href='scm_warehouse_inventory.html' class="btn" >Go Back</a> <br> <br>
-          <a href='cha_scm_results.php' class='btn'>View Entries</a>
+          <a href='./scm_warehouse_inventory.html' class="btn" >Go Back</a> <br> <br>
+          <a href='./cha_scm_results.php' class='btn'>View Entries</a>
           </div>
           
 </body>

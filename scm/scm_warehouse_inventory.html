@@ -246,7 +246,7 @@
 
     // Fetch inventory data from the server and populate the table
     function fetchInventory() {
-      fetch('scm_fetch_inventory.php')
+      fetch('./scm_fetch_inventory.php')
         .then(response => response.json())
         .then(data => {
           const inventoryTable = document.getElementById('inventory-table').querySelector('tbody');
@@ -294,12 +294,12 @@
 
     // Function to handle the click event for the Inbound button
     function handleInbound() {
-      window.location.href = 'cha_scm_view_inbound.html';
+      window.location.href = './cha_scm_view_inbound.html';
     }
 
     // Function to handle the click event for the Outbound button
     function handleOutbound() {
-      window.location.href = 'cha_scm_view_outbound.html';
+      window.location.href = './cha_scm_view_outbound.html';
     }
 
     // Reset the form fields after submission
@@ -315,7 +315,7 @@
     // log out
     function logOut() {
       if (confirm("Do you want to Log out?")) {
-        window.location.href = "/cha_sys_employee_login.html";
+        window.location.href = "./cha_sys_employee_login.html";
       }
     }
   </script>
