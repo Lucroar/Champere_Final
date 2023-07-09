@@ -105,7 +105,7 @@ $result_customer = $conn->query($sql_customer);
 
     .form-container{
       margin-top: 20px;
-      max-width: 50%;
+      max-width: 40%;
       margin: 20px auto 10px;
       padding: 20px;
       background-color: #3e000f;
@@ -217,7 +217,7 @@ $result_customer = $conn->query($sql_customer);
         echo "<p><strong>Quantity:</strong> " . $row["quantity"] . "<br>";
         echo "<p><strong>Price:</strong> " . $row["price"] . "<br>";
         echo "<p><strong>Amount:</strong> " . $row["amount"] . "<br>";
-        echo "<a href='cha_act_sales-view.php?id=". $row['salesRep'] ."' class='button'>Delete</a>";
+        echo "<div class='container'><a href='cha_act_sales-view.php?id=". $row['salesRep'] ."' class='button'>Delete</a>";
         echo "</div>";
         echo '</div>';
       }
@@ -238,7 +238,7 @@ $result_customer = $conn->query($sql_customer);
         echo "<p><strong>Client Name:</strong> " . $row["clientName"] . "<br>";
         echo "<p><strong>Amount Receive:</strong> " . $row["amountReceive"] . "<br>";
         echo "<p><strong>Date:</strong> " . $row["date"] . "<br>";
-        echo "<a href='cha_act_customer-view.php?id=". $row['id'] ."' class='button'>Delete</a>";
+        echo "<div class='container'><a href='cha_act_customer-view.php?id=". $row['id'] ."' class='button'>Delete</a>";
         echo "</div>";
         echo '</div>';
       }
@@ -259,7 +259,7 @@ $result_customer = $conn->query($sql_customer);
         echo "<p><strong>Supplier Name:</strong> " . $row["supplierName"] . "<br>";
         echo "<p><strong>Amount:</strong> " . $row["amount"] . "<br>";
         echo "<p><strong>Date:</strong> " . $row["date"] . "<br>";
-        echo "<a href='cha_act_payable-view.php?id=". $row['id'] ."' class='button'>Delete</a>";
+        echo "<div class='container'><a href='cha_act_payable-view.php?id=". $row['id'] ."' class='button'>Delete</a>";
         echo "</div>";
         echo '</div>';
       }
