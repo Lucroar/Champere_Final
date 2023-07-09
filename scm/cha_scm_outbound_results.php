@@ -131,6 +131,7 @@ $result = $conn->query($sql);
               echo "Error deleting data: " . mysqli_error($conn);
             }
           }
+
   // Close the connection
   $conn->close();
   
