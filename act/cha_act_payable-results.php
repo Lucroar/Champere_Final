@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Form Submission Result</title>
-
+  <link rel="icon" type="image/x-icon" href="./img/Champeré logo.png">
 </head>
 <style>
       @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Noto+Sans&family=Pinyon+Script&display=swap');

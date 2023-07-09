@@ -82,6 +82,7 @@ $result = $conn->query($sql);
 <body>
   <div class="form-data" id="white">
   <h2>Retrieved Form Data</h2>
+  <link rel="icon" type="image/x-icon" href="./img/Champeré logo.png">
   </div>
   <?php
   if ($result->num_rows > 0) {

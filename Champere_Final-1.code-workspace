@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../../xampp/htdocs/Champere_Final-1"
+		},
+		{
+			"path": "../../Documents/mkt"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501
+	}
+}

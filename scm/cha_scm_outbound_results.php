@@ -23,6 +23,7 @@ $result = $conn->query($sql);
 <html>
 <head>
   <title>Retrieved Form Data</title>
+  <link rel="icon" type="image/x-icon" href="./img/Champeré logo.png">
   <style>
     /* Custom styling for the retrieved form data */
     body {

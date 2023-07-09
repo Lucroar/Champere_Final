@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Form Output</title>
+    <link rel="icon" type="image/x-icon" href="./img/Champeré logo.png">
     <style>
       /* Container styles */
         .container-one,

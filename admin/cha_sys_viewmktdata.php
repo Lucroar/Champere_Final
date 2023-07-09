@@ -18,6 +18,7 @@ $result = $conn->query($sql);
 <head>
     <title>Marketing Data Entries</title>
     <link rel="stylesheet" type="text/css" href="cha_mkt_stylesheet.css">
+    <link rel="icon" type="image/x-icon" href="./img/Champeré logo.png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Noto+Sans&family=Pinyon+Script&display=swap');
         body {
