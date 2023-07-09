@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Input Data </title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="cha_act_stylesheet.css">
+  <style>
+    .title {
+      font-family: "Pinyon Script";
+      text-align: center;
+      font-size: 40px;
+      padding: 0px;
+      color:#FDCD93;
+    }
+    .form-container {
+        max-width: 500px;
+        margin: 20px auto;
+        padding: 50px 100px 50px 100px;
+        border-radius: 10px;
+        padding-top: 50px;
+        background-color: #500113;
+    }
+
+      h2 {
+        font-size: 40px;
+        padding: 0px;
+        color:#FDCD93;  
+    }
+    .navbar {
+        position: sticky;
+        height: 40px;
+        background-clip: border-box;
+        width: 90%;
+        margin: auto;
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .navbar-color{
+        background-color: #500113;
+        margin: 0px;
+    }
+
+    .navbar img {
+        height: 50px;
+    }
+
+    .navbar ul li {
+        list-style: none;
+        display: inline-block;
+        margin: 0 20px;
+        position: relative;
+    }
+
+    .navbar ul li a {
+        text-decoration: none;
+        font-size: 13px;
+        color: #FDCD93;
+        text-transform: uppercase;
+    }
+    #login {
+        display: block;
+        width: 60px;
+        padding: 10px 20px;
+        color: #FDCD93;
+        background-color: #79472E;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+        font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar-color">
+    <div class="navbar">
+        <p class="title">Champeré</p>
+        <ul>
+            <li><a href="/cha_act_input.html">Accountancy</a></li>
+            <li><a id="login" onclick="logOut()">Log Out</a></li>
+        </ul>
+    </div>
+    </div>
+
+  <div class="form-container">
+    <form action="cha_act_customer-results.php" method="POST">
+ <h2> Payments from Customers </h2>
+    
+   <label for="cname" class="form-label">Customer Name:</label>
+   <input type="text" id="cname" name="cname" class="form-input" required>
+  
+  <label class="form-label" for="product">Product:</label>
+  <input class="form-input" type="text" name="product" required>
+  
+  <label class="form-label" for="quantity">Quantity:</label>
+  <input class="form-input" type="number" name="quantity" required>
+  
+  <label class="form-label" for="amount">Amount:</label><br>
+  <input class="form-input" type="number" name="amount" required>
+  <br><br>
+  
+  <label class="form-label" for="date">Date:</label>
+  <input class="form-input" type="date" name="date" required></input>
+ 
+   <button type="submit" class="form-button">Submit</button>
+   
+   </form>
+   <br>
+   <br>
+   </div>
+   <div class="form-container">
+   <form action="cha_act_receivable-results.php" method="POST">   
+   <h2> Account Receivable Data </h2>
+   
+   
+   <label for="clname" class="form-label">Client Name:</label>
+   <input type="text" id="clname" name="clname" class="form-input" required>
+   
+   <label class="form-label" for="amntrcv">Amount Receive:</label>
+   <input class="form-input" type="number" name="amntrcv" required>
+   
+   <label class="form-label" for="date">Date:</label>
+   <input class="form-input" type="date" name="date" required></input>
+   
+   <button type="submit" class="form-button">Submit</button>
+   
+   </form>
+   <br>
+   <br>
+   </div>
+   <div class="form-container">
+   <form action="cha_act_payable-results.php" method="post">
+   <h2> Account Payable Data </h2>   
+   
+   <label for="sname" class="form-label">Supplier Name:</label>
+   <input type="text" id="sname" name="sname" class="form-input" required>
+   
+   <label class="form-label" for="amount">Paid Amount:</label>
+   <input class="form-input" type="number" name="amount" required>
+   
+   <label class="form-label" for="date">Date:</label>
+   <input class="form-input" type="date" name="date" required></input>
+   
+   <button type="submit" class="form-button">Submit</button>
+   
+   </form>
+   <br>
+   <br>
+   </div>
+   <div class="form-container">
+   <form action="cha_act_sales-results.php" method="post">
+   <h2> Sales Data </h2>
+   
+   <label for="rep" class="form-label">Sales Representative:</label>
+   <input type="text" id="rep" name="rep" class="form-input" required>
+   
+   <label class="form-label" for="cusname">Customer Name:</label>
+   <input class="form-input" type="text" name="cusname" required>
+   
+   <label class="form-label" for="date">Order Date:</label>
+   <input class="form-input" type="date" name="date" required></input>
+   
+   <label class="form-label" for="pname">Product Name:</label><br>
+   <input class="form-input" type="text" name="pname" required>
+   
+   <label class="form-label" for="quantity">Quantity:</label><br>
+   <input class="form-input" type="number" name="quantity" required>
+   
+   <label class="form-label" for="price">Price:</label><br>
+   <input class="form-input" type="number" name="price" required>
+   
+   <label class="form-label" for="amount">Amount:</label><br>
+   <input class="form-input" type="number" name="amount" required></input>
+   
+   <button type="submit" class="form-button">Submit</button>
+   </form>
+   </div>
+   
+   <script>
+    // log out
+    function logOut(){
+    if (confirm("Do you want to Logout?") == true) {
+    window.location.href="../cha_sys_employee_login.html";
+    } else {    
+    }
+}
+</script>
+   </body>
+   </html>

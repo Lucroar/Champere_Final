@@ -1,0 +1,9 @@
+CREATE TABLE order_customer (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  customerName VARCHAR(50) NOT NULL,
+  product VARCHAR(50) NOT NULL,
+  quantity INT (111) NOT NULL,
+  amount INT (111) NOT NULL,
+  date DATE NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

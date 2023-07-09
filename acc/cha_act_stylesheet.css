@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Noto+Sans&family=Pinyon+Script&display=swap');
+body {
+    background-color: #fbefda;
+    margin: 0%;
+    margin-bottom: 10px;
+    background-image: url(./img/champagnetest.jpg);
+    background-size: cover;
+    font-family: "Noto Sans", 'Times New Roman', sans-serif;
+}
+
+.container1{
+    float: left;
+    margin: 50px;
+    margin-right: 0px;
+}
+
+.container2{
+    float: right;
+    margin: 50px;
+    margin-left: 0px;
+}
+
+.text-container{
+    max-width: 600px;
+    margin: 0;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: rgba(85, 45, 54, 0.597);
+    box-shadow: 0 10px 30px rgba(49, 6, 15, 0.2);
+}
+
+.text-title{
+    font-family: 'Pinyon Script';
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 45px;
+    font-weight: 10px;
+    color: #FDCD93;
+}
+
+.text-header {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #FDCD93;
+}
+
+.text-body {
+    font-size: 20px;
+    color: #FDCD93;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.button {
+    display: block;
+    width: 100px;
+    padding: 10px 20px;
+    margin: 200px;
+    color: #FDCD93;
+    background-color: #79472E;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    font-size: 18px;
+}
+
+.button:hover {
+    background-color: #bf6541;
+}
+
+/*for login pages*/
+.background {
+    place-items: center;
+    text-align: center;
+    max-width: 500px;
+    max-height: 800px;
+    border-radius: 20px;
+    background-color: rgb(255 255 255 / 0.3);
+    box-shadow: 0 10px 15px rgba(25, 25, 25, 1);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.form-header{
+    display: block;
+    margin-top: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 19px;
+    color: #fff;
+}
+
+.form-input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    
+}
+
+.form-input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(254, 254, 254, 0.482);
+}
+
+.form-button {
+    padding: 10px 20px;
+    background-color: #693b24;
+    font-size: 18px;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}

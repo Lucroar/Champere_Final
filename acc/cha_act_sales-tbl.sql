@@ -1,0 +1,11 @@
+CREATE TABLE order_sales (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  salesRep VARCHAR(50) NOT NULL,
+  customerName VARCHAR(50) NOT NULL,
+  orderDate DATE NOT NULL,
+  productName VARCHAR(50) NOT NULL,
+  quantity INT(111) NOT NULL,
+  price INT(111) NOT NULL,
+  amount INT(111) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

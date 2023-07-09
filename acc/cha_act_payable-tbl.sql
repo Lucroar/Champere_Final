@@ -1,0 +1,7 @@
+CREATE TABLE order_payable (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  supplierName VARCHAR(50) NOT NULL,
+  amount INT (111) NOT NULL,
+  date DATE NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

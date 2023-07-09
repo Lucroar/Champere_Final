@@ -1,0 +1,7 @@
+CREATE TABLE order_receivable (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  clientName VARCHAR(50) NOT NULL,
+  amountReceive INT (111) NOT NULL,
+  date DATE NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
