@@ -91,7 +91,9 @@ $result = $conn->query($sql);
                 echo "</div>";
     }
   } else {
+    echo '<div class="form-container" id="white">';
     echo "<p>No form data found.</p>";
+    echo "</div>";
   }
   
    //Get this (make sure to change the table name)
@@ -109,18 +111,21 @@ $result = $conn->query($sql);
             }
           }
 
-    //Get this
-        function deleteData(id) {
+  // Close the connection
+  $conn->close();
+  
+  ?>
+  
+  <script>
+     //Get this
+     function deleteData(id) {
             if (confirm("Do you want to delete this entry?") == true) {
                 window.location.href = "cha_pyr_viewpyrdata.php?id=" + id;
             } else {
             }
         }
+    </script>
 
-  // Close the connection
-  $conn->close();
-  
-  ?>
   
   <a href="cha_scm_view_outbound.html" class="btn">New Entry</a>
   
