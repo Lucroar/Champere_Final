@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 // Retrieve data from the database
-$sql = "SELECT SupplierName, Address, ContactInformation, Email, ProductName, Description, Units, Quantity, Amount, ModeOfPayment, TermsOfPayment, OrderedBy, OrderDate FROM hlv";
+$sql = "SELECT * FROM hlv";
 $result = $conn->query($sql);
 
 ?>
@@ -21,7 +21,7 @@ $result = $conn->query($sql);
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Retrieved Form Data</title>
+  <title>Indbound Data Entries</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Noto+Sans&family=Pinyon+Script&display=swap');
     body {
@@ -142,9 +142,10 @@ $result = $conn->query($sql);
     <div class="navbar">
         <p class="title">Champeré</p>
         <ul>
+            <li><a href="./cha_sys_admin_index.php">Admin</a></li>
             <li><a href="cha_sys_view_acc.php">Accountancy</a></li>
             <li><a href="cha_sys_view_viewemployee.php">Human Resource</a></li>
-            <li><a href="/cha_sys_admin_faqs.html">Marketing</a></li>
+            <li><a href="/cha_sys_viewmktdata.php">Marketing</a></li>
             <li><a href="cha_sys_viewpyrdata.php">Payroll</a></li>
             <li><a href="cha_sys_inbound_results.php">SCM (Inbound)</a></li>
             <li><a href="cha_sys_outbound_results.php">SCM (Outbound)</a></li>

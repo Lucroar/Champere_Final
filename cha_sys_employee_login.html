@@ -7,51 +7,52 @@
         <link rel="icon" type="image/x-icon" href="./img/Champeré logo.png">
     </head>
     <body>
-            <center>
-            <div class="background">
-                 <div class="flex-container">
-                    <a href="/cha_sys_new_customerlogin.html">
-                       <button class="back-button">
-                        Back
-                        </button>
-                    </div>    
-                    </a>
-                <div class="form-container">
-                    <form class="form-label" id="action_page" action="" method="get">
-                <div class="form-header">
-                    <a href="cha_sys_new_index.html"><img src="img/Champeré logo.png" alt="Champeré logo" height="150px"></a>
-                    <h1> Champeré </h1>
-                    <h1> Employee Login </h1>
-                </div>
-                    <select class="dropdown-select" id="framework">
-                        <option value="1">Admin</option>
-                        <option value="2">Accountancy</option>
-                        <option value="3">Human Resource</option>
-                        <option value="4">Marketing</option>
-                        <option value="5">Payroll</option>
-                        <option value="6">Supply Chain Management</option>
-                    </select>
+    <center>
+      <div class="background">
+        <div class="flex-container">
+          <a href="/cha_sys_new_customerlogin.html">
+              <button class="back-button">
+              Back
+              </button>
+          </div>    
+          </a>
+          <div class="form-container">
+              <form class="form-label" id="action_page" action="" method="get">
+          <div class="form-header">
+              <a href="cha_sys_new_index.html"><img src="img/Champeré logo.png" alt="Champeré logo" height="150px"></a>
+              <h1> Champeré </h1>
+              <h1> Employee Login </h1>
+          </div>
+            <select class="dropdown-select" id="framework">
+              <option value="1">Admin</option>
+              <option value="2">Accountancy</option>
+              <option value="3">Human Resource</option>
+              <option value="4">Marketing</option>
+              <option value="5">Payroll</option>
+              <option value="6">Supply Chain Management</option>
+            </select>
 
-                <div class="form-label">
-                    <br><label for="name">Username<br></label>
-                    <input class="form-input" type="text" placeholder="Enter Name" name="name" required>
-                    <label for="password">Password<br></label>
-                    <input class="form-input" type="password" placeholder="Enter Password" name="password" required>
-                    <button class="form-button" onclick="employeeLogin()">Login</button>
-                    </form>
-                </div>
-                </div>
-            </div>
-        </center>
-        <script>
-            function employeeLogin() {
+          <div class="form-label">
+              <br><label for="name">Username<br></label>
+              <input class="form-input" type="text" placeholder="Enter Name" name="name" required>
+              <label for="password">Password<br></label>
+              <input class="form-input" type="password" placeholder="Enter Password" name="password" required>
+              <button class="form-button" onclick="employeeLogin()">Login</button>
+              </form>
+          </div>
+          </div>
+      </div>
+    </center>
+      
+  <script>
+  function employeeLogin() {
   
   var link = document.getElementById("framework").value;
   
   switch (link) {
     
     case "1": //Admin
-      document.getElementById("action_page").action = "/admin/cha_sys_admin_index.html";
+      document.getElementById("action_page").action = "/admin/cha_sys_admin_index.php";
       break;
     case "2": //Accountancy
       document.getElementById("action_page").action = "/act/cha_act_input.html";

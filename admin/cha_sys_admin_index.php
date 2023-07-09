@@ -1,5 +1,4 @@
 <?php
-
 $servername = "127.0.0.1"; // Replace with the actual MySQL server address
 $username = "root"; // Replace with your MySQL username
 $password = ""; // Replace with your MySQL password
@@ -14,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 // Retrieve data from the database
-$sql = "SELECT * FROM hlv1";
+$sql = "SELECT * FROM customerinfo";
 $result = $conn->query($sql);
 
 ?>
@@ -22,7 +21,7 @@ $result = $conn->query($sql);
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Outbound Data Entries</title>
+  <title>User Data Entries</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Noto+Sans&family=Pinyon+Script&display=swap');
     body {
@@ -36,6 +35,7 @@ $result = $conn->query($sql);
     .navbar-color{
         background-color: #500113;
         margin: 0px;
+        position: sticky;
 
     }
     .navbar {
@@ -136,17 +136,17 @@ $result = $conn->query($sql);
     .container {
       margin-top: 20px;
     }
-  </style>
+  </style>  
 </head>
 <body>
 <div class="navbar-color">
     <div class="navbar">
         <p class="title">Champeré</p>
         <ul>
-            <li><a href="./cha_sys_admin_index.php">Admin</a></li>
+            <li><a href="cha_sys_admin_index.php">Admin</a></li>
             <li><a href="cha_sys_view_acc.php">Accountancy</a></li>
             <li><a href="cha_sys_view_viewemployee.php">Human Resource</a></li>
-            <li><a href="/cha_sys_viewmktdata.php">Marketing</a></li>
+            <li><a href="cha_sys_viewmktdata.php">Marketing</a></li>
             <li><a href="cha_sys_viewpyrdata.php">Payroll</a></li>
             <li><a href="cha_sys_inbound_results.php">SCM (Inbound)</a></li>
             <li><a href="cha_sys_outbound_results.php">SCM (Outbound)</a></li>
@@ -154,70 +154,56 @@ $result = $conn->query($sql);
         </ul>
     </div>
     </div>
-  <div class="form-data">
+    <div class="form-container" id="white">
+  <div class="form-data" id="white">
   <h2>Retrieved Form Data</h2>
   </div>
-
   <?php
-    if(isset($_GET['id'])){
-      $id = $_GET['id'];
-      
-      $delete = mysqli_query($conn, "DELETE FROM hlv1 WHERE id='$id' ");
-      if($delete) {
-        echo '<div class="form-data" id="white">';
-        echo "Data deleted successfully.";
-        echo '</div>';
-        echo '<script>window.location.href = "cha_scm_outbound_results.php";</script>';
-      } else {
-        echo "Error deleting data: " . mysqli_error($conn);
-      }
-    }
-    
   if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
       echo "<div class='form-data'>";
-      echo "<p><strong>Requested By:</strong> " . $row["RequestedBy"] . "</p>";
-      echo "<p><strong>Item Name:</strong> " . $row["ItemName"] . "</p>";
-      echo "<p><strong>Quantity:</strong> " . $row["Quantity"] . "</p>";
-      echo "<p><strong>Item Recipient:</strong> " . $row["ItemRecipient"] . "</p>";
-      echo "<p><strong>Request Date:</strong> " . $row["RequestDate"] . "</p>";
-      echo "<p><strong>Status:</strong> " . $row["Status"] . "</p>";
-      echo "<div class='container'><a href='cha_scm_outbound_results.php?id=". $row['id'] ."' class='btn' onclick='deleteData(". $row['id'] .")'>Delete</a>";
+      echo "<p><strong>Name:</strong> " . $row["firstName"].$row["middleName"].$row["lastName"] . "</p>";
+      echo "<p><strong>Email:</strong> " . $row["customerEmail"] . "</p>";
+      echo "<p><strong>Contact Information:</strong> " . $row["contactInfo"] . "</p>";
+      echo "<p><strong>Gender:</strong> " . $row["gender"] . "</p>";
+      echo "<p><strong>Birthdate:</strong> " . $row["birthdate"] . "</p>";
+      echo "<p><strong>Address:</strong> " . $row["address"] . "</p>";
+      echo "<div class='container'><a href='cha_sys_admin_index.php?id=". $row['id'] ."' class='btn' onclick='deleteData(". $row['id'] .")'>Delete</a>";
       echo "</div>";
       echo "</div>";
+
     }
-  } else { 
+  } else {
     echo '<div class="form-data" id="white">';
     echo "<p>No form data found.</p>";
     echo "</div>";
   }
-  
-   //Get this (make sure to change the table name)
+
+  //Get this (make sure to change the table name)
         if(isset($_GET['id'])){
             $id = $_GET['id'];
             
             $delete = mysqli_query($conn, "DELETE FROM hlv WHERE id='$id' ");
             if($delete) {
-                echo '<div class="form-container" id="white">';
+                echo '<div class="form-data" id="white">';
               echo "Data deleted successfully.";
               echo '</div>';
-              echo '<script>window.location.href = "cha_scm_outbound_results.php";</script>';
+              echo '<script>window.location.href = "cha_scm_results.php";</script>';
             } else {
               echo "Error deleting data: " . mysqli_error($conn);
             }
-          }
+          }   
   // Close the connection
   $conn->close();
-  
   ?>
-  </script>
-  <script>
-        function deleteData(id) {
-            if (confirm("Do you want to delete this entry?") == true) {
-                window.location.href = "cha_pyr_viewpyrdata.php?id=" + id;
-            } else {
-            }
-        }
-    </script>
+  <script> 
+      //Get this
+      function deleteData(id) {
+                if (confirm("Do you want to delete this entry?") == true) {
+                    window.location.href = "cha_scm_results.php?id=" + id;
+                } else {
+                }
+              }
+  </script> 
 </body>
 </html>

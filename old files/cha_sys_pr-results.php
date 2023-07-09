@@ -1,23 +1,7 @@
-<?php
-$servername = "127.0.0.1";
-$username = "root";
-$password = '';
-$database = "champeré";
-
-$conn = new mysqli($servername, $username, $password, $database);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "SELECT * FROM marketing";
-$result = $conn->query($sql);
-?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Marketing Data Entries</title>
-    <link rel="stylesheet" type="text/css" href="cha_mkt_stylesheet.css">
+    <title>Payroll Data Submission Result</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Noto+Sans&family=Pinyon+Script&display=swap');
         body {
@@ -204,6 +188,7 @@ $result = $conn->query($sql);
         }
 
         .navbar ul li a {
+            position: sticky;
             text-decoration: none;
             font-size: 13px;
             color: #FDCD93;
@@ -211,17 +196,18 @@ $result = $conn->query($sql);
         }
 
         #login {
-                display: block;
-                width: 60px;
-                padding: 10px 20px;
-                color: #FDCD93;
-                background-color: #79472E;
-                text-align: center;
-                border-radius: 5px;
-                cursor: pointer;
-                transition: background-color 0.2s ease-in-out;
-                font-size: 12px;
-            }
+            position: sticky;
+            display: block;
+            width: 60px;
+            padding: 10px 20px;
+            color: #FDCD93;
+            background-color: #79472E;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            font-size: 12px;
+        }
             .title {
             font-family: "Pinyon Script";
             text-align: center;
@@ -232,59 +218,83 @@ $result = $conn->query($sql);
     </style>
 </head>
 <body>
-    <div class="navbar-color">
-        <div class="navbar">
-            <p class="title">Champeré</p>
-            <ul>
-                <li><a href="cha_mkt_inputdata.html">Marketing</a></li>
-                <li><a id="login" onclick="logOut()">Log Out</a></li>
-            </ul>
-        </div>
-        </div>
-        <div class="form-container" id="white">
-        <h2>Marketing Data Entries</h2>
-        <p><strong>Other important datas that has been submitted would not be displayed for the employees privacy.</strong></p>
-        </div>
+<div class="navbar-color">
+    <div class="navbar">
+        <p class="title">Champeré</p>
+        <ul>
+            <li><a href="./cha_sys_admin_index.php">Admin</a></li>
+            <li><a href="cha_sys_view_acc.php">Accountancy</a></li>
+            <li><a href="cha_sys_view_viewemployee.php">Human Resource</a></li>
+            <li><a href="/cha_sys_viewmktdata.php">Marketing</a></li>
+            <li><a href="cha_sys_viewpyrdata.php">Payroll</a></li>
+            <li><a href="cha_sys_inbound_results.php">SCM (Inbound)</a></li>
+            <li><a href="cha_sys_outbound_results.php">SCM (Outbound)</a></li>
+            <li><a id="login" onclick="logOut()">Log Out</a></li>
+        </ul>
+    </div>
+    </div>
+    <div class="form-container" id="white">
+    <h2>Payroll Data Submission Result</h2>
+        <br><br>
         <?php
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo "<div class='form-container' id='white'>";
-                echo "<p><strong>Full Name:</strong>" . $row['fname'] . "</p>";
-                echo "<p><strong>Telephone No:</strong>" . $row['telno'] . "</p>";
-                echo "<p><strong>Cellphone No:</strong>" . $row['celno'] . "</p>";
-                echo "<p><strong>Email:</strong>" . $row['email'] . "</p>";
-                echo "<p><strong>Company Name:</strong>" . $row['cname'] . "</p>";
-                echo "<div class='container'><a href='cha_mkt_viewmktdata.php?id=". $row['id'] ."' class='btn' onclick='deleteData(". $row['id'] .")'>Delete</a>";
-                echo "</div>";
-                echo "</div>";
-            }
+        if (isset($_POST['ename']) && isset($_POST['enumber']) && isset($_POST['cposition']) 
+        && isset($_POST['edate']) && isset($_POST['email']) && isset($_POST['cnum']) 
+        && isset($_POST['tnum']) && isset($_POST['daysworked']) && isset($_POST['rate']) 
+        && isset($_POST['overtime']) && isset($_POST['bonus1']) && isset($_POST['bonus2']) 
+        && isset($_POST['bonus3']) && isset($_POST['bonus4']) && isset($_POST['mop'])
+        && isset($_POST['message'])) {
+            include 'cha_pyr_payrolldata.php';
+
+            $ename = $_POST['ename'];
+            $enumber = $_POST['enumber'];   
+            $cposition = $_POST['cposition'];
+            $edate = $_POST['edate'];
+            $email = $_POST['email'];
+            $cnum = $_POST['cnum'];
+            $tnum = $_POST['tnum'];
+            $daysworked = $_POST['daysworked'];
+            $rate = $_POST['rate'];
+            $overtime = $_POST['overtime'];
+            $bonus1 = $_POST['bonus1'];
+            $bonus2 = $_POST['bonus2'];
+            $bonus3 = $_POST['bonus3'];
+            $bonus4 = $_POST['bonus4'];
+            $mop = $_POST['mop'];
+            $message = $_POST['message'];
+
+            echo "<p><strong>Employee Name:</strong> " . $ename . "</p>";
+            echo "<p><strong>Employee Number:</strong> " . $enumber . "</p>";
+            echo "<p><strong>Position in the Company:</strong> " . $cposition . "</p>";
+            echo "<p><strong>Employment Date:</strong> " . $edate . "</p>";
+            echo "<p><strong>Email:</strong> " . $email . "</p>";
+            echo "<p><strong>Contact Number:</strong> " . $cnum . "</p>";
+            echo "<p><strong>Telephone Number:</strong> " . $tnum . "</p>";
+            echo "<p><strong>Number of Days Worked:</strong> " . $daysworked . "</p>";
+            echo "<p><strong>Rate Per Day:</strong> " . $rate . "</p>";
+            echo "<p><strong>Number of Times Did Overtime:</strong> " . $overtime . "</p>";
+            echo "<p><strong>Holiday Payment:</strong> " . $bonus1 . "</p>";
+            echo "<p><strong>13th Month Payment:</strong> " . $bonus2 . "</p>";
+            echo "<p><strong>Bonus Payment:</strong> " . $bonus3 . "</p>";
+            echo "<p><strong>Overtime Payment:</strong> " . $bonus4 . "</p>";
+            echo "<p><strong>Mode of Payment:</strong> " . $mop . "</p>";
+            echo "<p><strong>Message:</strong> " . $message . "</p>";
+
+            $g_income = 0;
+            $n_income = 0;
+
+            $overtimepay= 500*$overtime; 
+            $g_income=$daysworked*$rate+$overtimepay+$bonus1+$bonus2+$bonus3+$bonus4*200; 
+            $deduct = 2000; // for tax, sss, etc.
+            $n_income=$g_income-$deduct; 
+
+            echo "<p><strong>Gross Income:</strong> " . $g_income . "</p>";
+            echo "<p><strong>Deduction Made From: <br> Tax, Philhealth, SSS and Pagibig:</strong> " . $deduct . "</p>";
+            echo "<p><strong>Net Income:</strong> " . $n_income . "</p>";
         } else {
-            echo '<div class="form-container" id="white">';
-            echo "<p>No form data found.</p>";
-            echo "</div>";
+            echo "<p>No form data submitted.</p>";
         }
-        //Get this (make sure to change the table name)
-        if(isset($_GET['id'])){
-            $id = $_GET['id'];
-            
-            $delete = mysqli_query($conn, "DELETE FROM  marketing WHERE id='$id' ");
-            if($delete) {
-                echo '<div class="form-container" id="white">';
-            echo "Data deleted successfully.";
-            echo '</div>';
-            echo '<script>window.location.href = "cha_mkt_viewmktdata.php";</script>';
-            } else {
-            echo "Error deleting data: " . mysqli_error($conn);
-            }
-        }
-
-
-        $conn->close();
         ?>
-        <div class="form-container" id="white">
-        <a href="cha_pyr_inputdata.html" class="btn">New Entry</a>
-        </div>  
-    
+    </div>
     <script>
         // log out
         function logOut(){
@@ -297,7 +307,7 @@ $result = $conn->query($sql);
     //Get this
     function deleteData(id) {
             if (confirm("Do you want to delete this entry?") == true) {
-                window.location.href = "cha_mkt_viewmktdata.php?id=" + id;
+                window.location.href = "cha_pyr_viewpyrdata.php?id=" + id;
             } else {
             }
         }

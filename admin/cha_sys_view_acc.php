@@ -169,9 +169,10 @@ $result_customer = $conn->query($sql_customer);
     <div class="navbar">
         <p class="title">Champeré</p>
         <ul>
+            <li><a href="./cha_sys_admin_index.php">Admin</a></li>
             <li><a href="cha_sys_view_acc.php">Accountancy</a></li>
             <li><a href="cha_sys_view_viewemployee.php">Human Resource</a></li>
-            <li><a href="/cha_sys_admin_faqs.html">Marketing</a></li>
+            <li><a href="/cha_sys_viewmktdata.php">Marketing</a></li>
             <li><a href="cha_sys_viewpyrdata.php">Payroll</a></li>
             <li><a href="cha_sys_inbound_results.php">SCM (Inbound)</a></li>
             <li><a href="cha_sys_outbound_results.php">SCM (Outbound)</a></li>
@@ -180,7 +181,7 @@ $result_customer = $conn->query($sql_customer);
     </div>
     </div>
 <div class="form-container">
-  <h2>Form Data</h2>
+  <h2>Accounting Data</h2>
 </div>
 <div class="form-container">
   <h2>Order Customer</h2>
@@ -275,5 +276,23 @@ $result_customer = $conn->query($sql_customer);
 
 $conn->close();
 ?>
+
+<script>
+        // log out
+        function logOut(){
+        if (confirm("Do you want to Logout?") == true) {
+        window.location.href="../cha_sys_employee_login.html";
+        } else {    
+        }
+    }
+
+    //Get this
+    function deleteData(id) {
+            if (confirm("Do you want to delete this entry?") == true) {
+                window.location.href = "cha_pyr_viewpyrdata.php?id=" + id;
+            } else {
+            }
+        }
+    </script>
 </body>
 </html>
