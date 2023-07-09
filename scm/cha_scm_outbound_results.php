@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 // Retrieve data from the database
-$sql = "SELECT RequestedBy, ItemName, Quantity, ItemRecipient, RequestDate, Status FROM hlv1";
+$sql = "SELECT * FROM hlv1";
 $result = $conn->query($sql);
 
 ?>
@@ -62,7 +62,7 @@ $result = $conn->query($sql);
         text-decoration: none;
         border-radius: 4px;
         transition: background-color 0.3s ease;
-        margin: 10px;
+        margin: 15px;
     }
     h2{
         text-align: center;
@@ -72,6 +72,9 @@ $result = $conn->query($sql);
       }
     .btn:hover {
       background-color: #bf6541;
+    }
+    .container {
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -86,7 +89,7 @@ $result = $conn->query($sql);
       
       $delete = mysqli_query($conn, "DELETE FROM hlv1 WHERE id='$id' ");
       if($delete) {
-        echo '<div class="form-container" id="white">';
+        echo '<div class="form-data" id="white">';
         echo "Data deleted successfully.";
         echo '</div>';
         echo '<script>window.location.href = "cha_scm_outbound_results.php";</script>';
@@ -104,12 +107,12 @@ $result = $conn->query($sql);
       echo "<p><strong>Item Recipient:</strong> " . $row["ItemRecipient"] . "</p>";
       echo "<p><strong>Request Date:</strong> " . $row["RequestDate"] . "</p>";
       echo "<p><strong>Status:</strong> " . $row["Status"] . "</p>";
-      echo "<div class='container'><a href='cha_scm_outbound_results.php?". $row['id'] ."' class='btn' onclick='deleteData(". $row['id'] .")'>Delete</a>";
+      echo "<div class='container'><a href='cha_scm_outbound_results.php?id=". $row['id'] ."' class='btn' onclick='deleteData(". $row['id'] .")'>Delete</a>";
       echo "</div>";
       echo "</div>";
     }
   } else { 
-    echo '<div class="form-container" id="white">';
+    echo '<div class="form-data" id="white">';
     echo "<p>No form data found.</p>";
     echo "</div>";
   }
@@ -128,20 +131,12 @@ $result = $conn->query($sql);
               echo "Error deleting data: " . mysqli_error($conn);
             }
           }
-
-    //Get this
-        function deleteData(id) {
-            if (confirm("Do you want to delete this entry?") == true) {
-                window.location.href = "cha_pyr_viewpyrdata.php?id=" + id;
-            } else {
-            }
-        }
-
   // Close the connection
   $conn->close();
   
   ?>
   </script>
+  <div class="form-data">
   <a href="cha_scm_view_outbound.html" class="btn">New Entry</a>
   </div>
   <script>

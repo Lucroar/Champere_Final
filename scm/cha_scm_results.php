@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 // Retrieve data from the database
-$sql = "SELECT SupplierName, Address, ContactInformation, Email, ProductName, Description, Units, Quantity, Amount, ModeOfPayment, TermsOfPayment, OrderedBy, OrderDate FROM hlv";
+$sql = "SELECT * FROM hlv";
 $result = $conn->query($sql);
 
 ?>
@@ -62,7 +62,7 @@ $result = $conn->query($sql);
         text-decoration: none;
         border-radius: 4px;
         transition: background-color 0.3s ease;
-        margin: 10px;
+        margin: 15px;
     }
     h2{
         text-align: center;
@@ -73,16 +73,19 @@ $result = $conn->query($sql);
     .btn:hover {
       background-color: #bf6541;
     }
+    .container {
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
+  <div class="form-data" id="white">
   <h2>Retrieved Form Data</h2>
-  
+  </div>
   <?php
   if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
       echo "<div class='form-data'>";
-      
       echo "<p><strong>Supplier Name:</strong> " . $row["SupplierName"] . "</p>";
       echo "<p><strong>Address:</strong> " . $row["Address"] . "</p>";
       echo "<p><strong>Contact Information:</strong> " . $row["ContactInformation"] . "</p>";
@@ -96,18 +99,13 @@ $result = $conn->query($sql);
       echo "<p><strong>Terms of Payment:</strong> " . $row["TermsOfPayment"] . "</p>";
       echo "<p><strong>Ordered By:</strong> " . $row["OrderedBy"] . "</p>";
       echo "<p><strong>Order Date:</strong> " . $row["OrderDate"] . "</p>";
-
-      echo "</div>";
-      echo "<hr>";
-
-      //Get this
       echo "<div class='container'><a href='cha_scm_results.php?id=". $row['id'] ."' class='btn' onclick='deleteData(". $row['id'] .")'>Delete</a>";
       echo "</div>";
       echo "</div>";
 
     }
   } else {
-    echo '<div class="form-container" id="white">';
+    echo '<div class="form-data" id="white">';
     echo "<p>No form data found.</p>";
     echo "</div>";
   }
@@ -116,9 +114,9 @@ $result = $conn->query($sql);
         if(isset($_GET['id'])){
             $id = $_GET['id'];
             
-            $delete = mysqli_query($conn, "DELETE FROM /*DELETE*/ hlv WHERE id='$id' ");
+            $delete = mysqli_query($conn, "DELETE FROM hlv WHERE id='$id' ");
             if($delete) {
-                echo '<div class="form-container" id="white">';
+                echo '<div class="form-data" id="white">';
               echo "Data deleted successfully.";
               echo '</div>';
               echo '<script>window.location.href = "cha_scm_results.php";</script>';
@@ -126,10 +124,6 @@ $result = $conn->query($sql);
               echo "Error deleting data: " . mysqli_error($conn);
             }
           }
-
-
-
-          
   // Close the connection
   $conn->close();
   
@@ -144,8 +138,8 @@ $result = $conn->query($sql);
                 }
               }
   </script>        
-
+  <div class="form-data">
   <a href="cha_scm_view_inbound.html" class="btn">New Entry</a>
-  
+  </div>
 </body>
 </html>
